@@ -1,0 +1,1603 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#FAF8F3" />
+
+  <title data-i18n="meta.title">Spark Claw — AI 네이티브 1인 창업자 프로그램</title>
+  <meta name="description" data-i18n="meta.description" content="스파크랩이 제안하는 에이전틱 AI 시대의 1인 창업자 전문 액셀러레이팅 프로그램. AI가 당신의 팀입니다." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Spark Claw — AI is your team." />
+  <meta property="og:description" content="SparkLabs' first program for solo founders in the era of Agentic AI." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sparkclaw.sparklabs.co.kr" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+CiAgPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iOCIgZmlsbD0iIzBDMEMwQyIvPgogIDxwYXRoIGQ9Ik0xOCA2TDggMTloOGwtMiA3IDEwLTE0aC04bDItNnoiIGZpbGw9IiNFODQ0MUMiLz4KPC9zdmc+Cg==" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet" />
+  <style>
+/* =========================
+   Spark Claw — Stylesheet
+   Design tone: Light base + electric accent, editorial typography
+========================= */
+
+:root {
+  /* Color system */
+  --bg:        #FAF8F3;        /* warm off-white */
+  --bg-alt:    #F3EFE6;        /* slight surface */
+  --surface:   #FFFFFF;
+  --ink:       #0C0C0C;        /* near-black text */
+  --ink-soft:  #2A2A2A;
+  --muted:     #6B6B6B;
+  --border:    #E5E1D6;
+  --border-soft: #EEEAE0;
+  --accent:    #E8441C;        /* spark orange-red */
+  --accent-ink:#B4310F;        /* darker accent for hovers */
+  --accent-soft:#FCE8DF;       /* pale accent */
+
+  /* Type */
+  --font-sans: "Pretendard Variable", "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Space Grotesk", "Pretendard Variable", "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Layout */
+  --container: 1200px;
+  --radius: 14px;
+  --radius-sm: 8px;
+
+  /* Motion */
+  --ease: cubic-bezier(.2,.7,.2,1);
+}
+
+/* Reset & base */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "ss01", "cv11";
+}
+
+html[lang="en"] body { font-family: "Inter", "Pretendard Variable", system-ui, sans-serif; }
+
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+@media (max-width: 720px) {
+  .container { padding: 0 20px; }
+}
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+
+.accent { color: var(--accent); }
+
+/* =========================
+   Buttons
+========================= */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 22px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: -0.005em;
+  transition: background .2s var(--ease), color .2s var(--ease), transform .2s var(--ease), border-color .2s var(--ease);
+  white-space: nowrap;
+}
+.btn--sm { padding: 10px 16px; font-size: 14px; }
+.btn--primary {
+  background: var(--ink);
+  color: var(--bg);
+}
+.btn--primary:hover { background: var(--accent); transform: translateY(-1px); }
+.btn--ghost {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--border);
+}
+.btn--ghost:hover { border-color: var(--ink); }
+
+/* =========================
+   Nav
+========================= */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(250, 248, 243, .85);
+  backdrop-filter: saturate(180%) blur(14px);
+  -webkit-backdrop-filter: saturate(180%) blur(14px);
+  border-bottom: 1px solid transparent;
+  transition: border-color .3s var(--ease);
+}
+.nav.is-scrolled { border-color: var(--border); }
+
+.nav__inner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  height: 68px;
+}
+
+.nav__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink);
+}
+.nav__mark {
+  display: inline-flex;
+  width: 32px; height: 32px;
+  align-items: center; justify-content: center;
+  border-radius: 8px;
+  background: var(--ink);
+  color: var(--accent);
+}
+.nav__wordmark {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  font-size: 15px;
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-left: 20px;
+  flex: 1;
+}
+.nav__links a {
+  font-size: 14px;
+  color: var(--ink-soft);
+  position: relative;
+}
+.nav__links a:hover { color: var(--accent); }
+
+.nav__actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+}
+.lang-btn {
+  padding: 4px 2px;
+  color: var(--muted);
+  font-weight: 500;
+  transition: color .15s var(--ease);
+}
+.lang-btn[aria-pressed="true"] {
+  color: var(--ink);
+  font-weight: 700;
+}
+.lang-btn:hover { color: var(--ink); }
+.lang-toggle__sep { opacity: .4; }
+
+/* Mobile menu toggle */
+.nav__menu {
+  display: none;
+  width: 40px; height: 40px;
+  padding: 10px;
+  margin-left: auto;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+}
+.nav__menu span {
+  display: block;
+  height: 2px;
+  background: var(--ink);
+  transition: transform .2s var(--ease);
+}
+
+@media (max-width: 960px) {
+  .nav__links { display: none; }
+  .nav__menu { display: inline-flex; }
+}
+@media (max-width: 520px) {
+  .nav__actions .btn { display: none; }
+}
+
+/* Mobile nav open state */
+body.nav-open .nav__links {
+  display: flex;
+  position: fixed;
+  inset: 68px 0 0 0;
+  flex-direction: column;
+  background: var(--bg);
+  padding: 40px 28px;
+  gap: 28px;
+  font-size: 22px;
+  border-top: 1px solid var(--border);
+}
+body.nav-open .nav__links a { font-size: 22px; }
+
+/* =========================
+   Hero
+========================= */
+.hero {
+  position: relative;
+  padding: 88px 0 96px;
+  overflow: hidden;
+}
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(60% 50% at 80% 0%, rgba(232,68,28,.10), transparent 65%),
+    radial-gradient(40% 40% at 10% 100%, rgba(232,68,28,.06), transparent 60%),
+    linear-gradient(180deg, transparent 0%, var(--bg) 90%);
+}
+.hero .container { position: relative; z-index: 1; }
+
+.hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  font-size: 13px;
+  color: var(--ink-soft);
+  font-family: var(--font-mono);
+  letter-spacing: 0.01em;
+  margin-bottom: 32px;
+}
+.hero__eyebrow .dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px rgba(232,68,28,.18);
+  animation: pulse 2s infinite var(--ease);
+}
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 4px rgba(232,68,28,.18); }
+  50%      { box-shadow: 0 0 0 8px rgba(232,68,28,.05); }
+}
+
+.hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(44px, 8vw, 104px);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+  font-weight: 700;
+  margin: 0 0 32px;
+  max-width: 14ch;
+}
+.hero__title span { display: inline; }
+html[lang="en"] .hero__title { letter-spacing: -0.04em; }
+
+.hero__sub {
+  max-width: 56ch;
+  font-size: clamp(16px, 1.4vw, 19px);
+  color: var(--ink-soft);
+  margin: 0 0 40px;
+}
+
+.hero__cta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 72px;
+}
+
+.hero__stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 32px;
+  margin: 0;
+  padding-top: 32px;
+  border-top: 1px solid var(--border);
+  max-width: 860px;
+}
+.hero__stats > div { }
+.hero__stats dt {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 10px;
+  font-family: var(--font-mono);
+}
+.hero__stats dd {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2.4vw, 28px);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+@media (max-width: 720px) {
+  .hero { padding: 56px 0 72px; }
+  .hero__stats { grid-template-columns: 1fr; gap: 20px; }
+  .hero__cta { margin-bottom: 48px; }
+}
+
+/* =========================
+   Section base
+========================= */
+.section { padding: 112px 0; border-top: 1px solid var(--border); }
+@media (max-width: 720px) { .section { padding: 72px 0; } }
+
+.section__head { margin-bottom: 56px; max-width: 720px; }
+.section__label {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.section__title {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4.5vw, 52px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  margin: 0 0 16px;
+}
+.section__sub {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: clamp(15px, 1.2vw, 17px);
+}
+
+/* =========================
+   Philosophy
+========================= */
+.philosophy__quote {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4.2vw, 56px);
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+  margin: 0 0 48px;
+  max-width: 24ch;
+  word-break: keep-all;
+}
+.philosophy__quote .accent { display: block; margin-top: .2em; font-weight: 700; }
+.philosophy__body {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 32px;
+  max-width: 1000px;
+  font-size: 17px;
+  color: var(--ink-soft);
+}
+.philosophy__body p { margin: 0; }
+.philosophy__body em { font-style: normal; font-weight: 600; }
+
+@media (max-width: 720px) {
+  .philosophy__body { grid-template-columns: 1fr; }
+}
+
+/* =========================
+   Benefits
+========================= */
+.benefits__grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.benefit-card {
+  background: var(--surface);
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 260px;
+  transition: background .25s var(--ease);
+}
+.benefit-card:hover { background: var(--bg-alt); }
+.benefit-card__num {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+}
+.benefit-card h3 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+.benefit-card__value {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--accent);
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+.benefit-card > p:last-child {
+  margin: auto 0 0;
+  color: var(--ink-soft);
+  font-size: 15px;
+}
+
+@media (max-width: 960px) {
+  .benefits__grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+@media (max-width: 560px) {
+  .benefits__grid { grid-template-columns: 1fr; }
+  .benefit-card { min-height: 200px; padding: 28px 24px; }
+}
+
+/* =========================
+   Process
+========================= */
+.process__steps {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 48px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  gap: 24px;
+  position: relative;
+}
+.step {
+  padding: 32px 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-height: 220px;
+  transition: transform .25s var(--ease), border-color .25s var(--ease);
+}
+.step:hover { transform: translateY(-3px); border-color: var(--accent); }
+.step__num {
+  font-family: var(--font-mono);
+  color: var(--accent);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+}
+.step__content h3 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  margin: 0 0 10px;
+  letter-spacing: -0.01em;
+}
+.step__content p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 14.5px;
+}
+
+.process__note {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 20px 24px;
+  background: var(--accent-soft);
+  border-radius: var(--radius);
+  color: var(--ink-soft);
+}
+.process__note svg { flex-shrink: 0; color: var(--accent); margin-top: 2px; }
+.process__note p { margin: 0; font-size: 15px; }
+
+@media (max-width: 960px) {
+  .process__steps { grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+@media (max-width: 560px) {
+  .process__steps { grid-template-columns: 1fr; }
+}
+
+/* =========================
+   About
+========================= */
+.about__grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+.about__text p {
+  color: var(--ink-soft);
+  font-size: 17px;
+  margin: 0 0 20px;
+  max-width: 58ch;
+}
+.about__text .section__title { margin-bottom: 24px; max-width: 20ch; }
+
+.about__quote {
+  margin: 40px 0 0;
+  padding: 28px 0 0;
+  border-top: 1px solid var(--border);
+  max-width: 58ch;
+}
+.about__quote p {
+  font-family: var(--font-display);
+  font-size: 20px;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin: 0 0 12px;
+}
+.about__quote cite {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--muted);
+  font-style: normal;
+  letter-spacing: 0.02em;
+}
+
+.about__facts {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--surface);
+}
+.about__facts li {
+  padding: 28px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.about__facts li:last-child { border-bottom: 0; }
+.about__fact-num {
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--accent);
+  line-height: 1;
+}
+.about__fact-label {
+  color: var(--ink-soft);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+@media (max-width: 960px) {
+  .about__grid { grid-template-columns: 1fr; gap: 48px; }
+}
+
+/* =========================
+   FAQ
+========================= */
+.faq__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid var(--border);
+}
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-item__q {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding: 28px 4px;
+  text-align: left;
+  font-family: var(--font-display);
+  font-size: clamp(17px, 1.5vw, 20px);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  transition: color .2s var(--ease);
+}
+.faq-item__q:hover { color: var(--accent); }
+.faq-item__icon {
+  font-size: 24px;
+  color: var(--muted);
+  transition: transform .3s var(--ease), color .2s var(--ease);
+  font-weight: 400;
+  line-height: 1;
+}
+.faq-item__q[aria-expanded="true"] .faq-item__icon {
+  transform: rotate(45deg);
+  color: var(--accent);
+}
+.faq-item__a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .35s var(--ease);
+}
+.faq-item__a p {
+  margin: 0 0 28px;
+  padding-right: 48px;
+  color: var(--ink-soft);
+  font-size: 16px;
+  line-height: 1.65;
+  max-width: 70ch;
+}
+
+/* =========================
+   Notify / Coming Soon
+========================= */
+.notify { padding-bottom: 140px; }
+.notify__card {
+  background: var(--ink);
+  color: var(--bg);
+  border-radius: 24px;
+  padding: clamp(40px, 6vw, 80px);
+  position: relative;
+  overflow: hidden;
+  background-image:
+    radial-gradient(80% 60% at 100% 0%, rgba(232,68,28,.35), transparent 60%),
+    radial-gradient(60% 50% at 0% 100%, rgba(232,68,28,.15), transparent 60%),
+    linear-gradient(180deg, #151515 0%, #0A0A0A 100%);
+}
+.notify__card .section__label { color: var(--accent); }
+.notify__title {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 5vw, 60px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  margin: 0 0 20px;
+  max-width: 22ch;
+}
+.notify__title span { display: inline; }
+.notify__sub {
+  color: rgba(250, 248, 243, .72);
+  font-size: clamp(15px, 1.2vw, 17px);
+  margin: 0 0 40px;
+  max-width: 56ch;
+}
+
+.notify__form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  max-width: 620px;
+  align-items: center;
+}
+.notify__form input[type="email"] {
+  height: 56px;
+  padding: 0 22px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.15);
+  background: rgba(255,255,255,.05);
+  color: var(--bg);
+  font-family: inherit;
+  font-size: 15px;
+  transition: border-color .2s var(--ease), background .2s var(--ease);
+}
+.notify__form input[type="email"]::placeholder { color: rgba(250,248,243,.45); }
+.notify__form input[type="email"]:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: rgba(255,255,255,.08);
+}
+.notify__form .btn--primary {
+  height: 56px;
+  padding: 0 28px;
+  background: var(--accent);
+  color: #fff;
+}
+.notify__form .btn--primary:hover { background: #FF5A2E; transform: none; }
+.notify__privacy {
+  grid-column: 1 / -1;
+  margin: 8px 0 0;
+  font-size: 12px;
+  color: rgba(250,248,243,.5);
+  font-family: var(--font-mono);
+}
+.notify__success {
+  grid-column: 1 / -1;
+  margin: 12px 0 0;
+  color: var(--accent);
+  font-size: 14px;
+}
+
+@media (max-width: 560px) {
+  .notify__form { grid-template-columns: 1fr; }
+}
+
+/* =========================
+   Footer
+========================= */
+.footer {
+  padding: 48px 0 60px;
+  border-top: 1px solid var(--border);
+  background: var(--bg);
+}
+.footer__inner {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 32px;
+  align-items: center;
+}
+.footer__brand p { margin: 4px 0 0; color: var(--muted); font-size: 13px; }
+.footer__links {
+  display: flex;
+  gap: 28px;
+  justify-content: center;
+}
+.footer__links a { font-size: 14px; color: var(--ink-soft); }
+.footer__links a:hover { color: var(--accent); }
+.footer__copy { margin: 0; color: var(--muted); font-size: 13px; font-family: var(--font-mono); }
+
+@media (max-width: 720px) {
+  .footer__inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .footer__links { flex-wrap: wrap; }
+}
+
+/* =========================
+   Smooth reveal
+========================= */
+@media (prefers-reduced-motion: no-preference) {
+  .hero__title,
+  .hero__sub,
+  .hero__cta,
+  .hero__stats,
+  .section__head,
+  .philosophy__quote,
+  .philosophy__body,
+  .benefits__grid,
+  .process__steps,
+  .process__note,
+  .about__grid,
+  .faq__list,
+  .notify__card {
+    animation: fadeUp .8s var(--ease) both;
+  }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: none; }
+}
+
+</style>
+</head>
+<body>
+
+  <!-- =========================
+       NAV
+  ========================= -->
+  <header class="nav">
+    <div class="container nav__inner">
+      <a href="#top" class="nav__brand" aria-label="Spark Claw home">
+        <span class="nav__mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/>
+          </svg>
+        </span>
+        <span class="nav__wordmark">SPARK CLAW</span>
+      </a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#philosophy" data-i18n="nav.philosophy">Philosophy</a>
+        <a href="#benefits" data-i18n="nav.benefits">Benefits</a>
+        <a href="#process" data-i18n="nav.process">Process</a>
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#faq" data-i18n="nav.faq">FAQ</a>
+      </nav>
+
+      <div class="nav__actions">
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button type="button" class="lang-btn" data-lang="ko" aria-pressed="true">KO</button>
+          <span class="lang-toggle__sep" aria-hidden="true">/</span>
+          <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <a href="#notify" class="btn btn--primary btn--sm" data-i18n="nav.cta">알림 받기</a>
+      </div>
+
+      <button class="nav__menu" type="button" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- =========================
+         HERO
+    ========================= -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero__eyebrow">
+          <span class="dot"></span>
+          <span data-i18n="hero.eyebrow">스파크랩 · Cohort 01 사전 모집</span>
+        </div>
+
+        <h1 class="hero__title">
+          <span data-i18n="hero.title.line1">AI가</span>
+          <span class="accent" data-i18n="hero.title.line2">당신의 팀</span>
+          <span data-i18n="hero.title.line3">입니다.</span>
+        </h1>
+
+        <p class="hero__sub" data-i18n="hero.sub">
+          Spark Claw는 에이전틱 AI 시대의 1인 창업가를 위한 스파크랩의 첫 프로그램입니다.
+          팀 없이도, AI와 함께라면 충분합니다.
+        </p>
+
+        <div class="hero__cta">
+          <a href="#notify" class="btn btn--primary" data-i18n="hero.ctaPrimary">1기 모집 알림 받기</a>
+          <a href="#philosophy" class="btn btn--ghost" data-i18n="hero.ctaSecondary">프로그램 철학 읽기 →</a>
+        </div>
+
+        <dl class="hero__stats">
+          <div>
+            <dt data-i18n="hero.stat1.label">초기 투자 규모</dt>
+            <dd data-i18n="hero.stat1.value">₩50M – 100M</dd>
+          </div>
+          <div>
+            <dt data-i18n="hero.stat2.label">지원 대상</dt>
+            <dd data-i18n="hero.stat2.value">1인 AI 창업자</dd>
+          </div>
+          <div>
+            <dt data-i18n="hero.stat3.label">운영 방식</dt>
+            <dd data-i18n="hero.stat3.value">온라인 중심 + 오프라인 밋업</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="hero__bg" aria-hidden="true"></div>
+    </section>
+
+    <!-- =========================
+         PHILOSOPHY
+    ========================= -->
+    <section class="section philosophy" id="philosophy">
+      <div class="container">
+        <div class="section__head">
+          <span class="section__label" data-i18n="philosophy.label">01 — Philosophy</span>
+        </div>
+
+        <h2 class="philosophy__quote">
+          <span data-i18n="philosophy.quote.part1">뛰어난 CEO의 핵심은</span>
+          <span data-i18n="philosophy.quote.part2">팀원을 얼마나 잘 이끄느냐</span>
+          <span data-i18n="philosophy.quote.part3">에 있습니다.</span>
+          <span class="accent" data-i18n="philosophy.quote.part4">그 팀이 AI여도 마찬가지입니다.</span>
+        </h2>
+
+        <div class="philosophy__body">
+          <p data-i18n="philosophy.body.p1">
+            기획과 개발, 마케팅, 고객 대응까지 AI 에이전트가 담당하는 시대입니다.
+            Spark Claw는 AI를 &lsquo;도구&rsquo;가 아닌 &lsquo;팀원&rsquo;으로 활용하는 창업가를 발굴합니다.
+          </p>
+          <p data-i18n="philosophy.body.p2">
+            Spark Claw는 AI 네이티브 창업가 한 명 한 명에 투자하는 데서 멈추지 않습니다.
+            이들을 한 자리에 모아 국내에서 가장 강력한 <em class="accent">AI 창업자 커뮤니티</em>를 만들어갑니다. 1인 창업가에게는 동료가 곧 가장 강력한 레버리지이기 때문입니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         BENEFITS
+    ========================= -->
+    <section class="section benefits" id="benefits">
+      <div class="container">
+        <div class="section__head">
+          <span class="section__label" data-i18n="benefits.label">02 — What You Get</span>
+          <h2 class="section__title" data-i18n="benefits.title">창업 초기, 가장 필요한 것부터.</h2>
+          <p class="section__sub" data-i18n="benefits.sub">스파크랩 포트폴리오사에 제공되는 혜택이 동일하게 적용됩니다.</p>
+        </div>
+
+        <ul class="benefits__grid">
+          <li class="benefit-card">
+            <div class="benefit-card__num">01</div>
+            <h3 data-i18n="benefits.items.0.title">초기 투자</h3>
+            <p class="benefit-card__value" data-i18n="benefits.items.0.value">₩50M – 100M</p>
+            <p data-i18n="benefits.items.0.desc">집중 부트캠프를 통과한 창업가 대상 초기 투자.</p>
+          </li>
+          <li class="benefit-card">
+            <div class="benefit-card__num">02</div>
+            <h3 data-i18n="benefits.items.1.title">OpenAI API 크레딧</h3>
+            <p class="benefit-card__value" data-i18n="benefits.items.1.value">AI 인프라</p>
+            <p data-i18n="benefits.items.1.desc">GPT 모델과 에이전트 툴 구축을 위한 크레딧.</p>
+          </li>
+          <li class="benefit-card">
+            <div class="benefit-card__num">03</div>
+            <h3 data-i18n="benefits.items.2.title">Anthropic Claude 크레딧</h3>
+            <p class="benefit-card__value" data-i18n="benefits.items.2.value">AI 인프라</p>
+            <p data-i18n="benefits.items.2.desc">Claude 기반 에이전틱 워크플로우 구축 지원.</p>
+          </li>
+          <li class="benefit-card">
+            <div class="benefit-card__num">04</div>
+            <h3 data-i18n="benefits.items.3.title">AWS 스타트업 혜택</h3>
+            <p class="benefit-card__value" data-i18n="benefits.items.3.value">클라우드</p>
+            <p data-i18n="benefits.items.3.desc">AWS 스타트업 프로그램 연계 할인 혜택.</p>
+          </li>
+          <li class="benefit-card">
+            <div class="benefit-card__num">05</div>
+            <h3 data-i18n="benefits.items.4.title">글로벌 SaaS 패키지</h3>
+            <p class="benefit-card__value" data-i18n="benefits.items.4.value">운영 도구</p>
+            <p data-i18n="benefits.items.4.desc">AI 창업에 필수적인 툴 스택을 한 번에.</p>
+          </li>
+          <li class="benefit-card">
+            <div class="benefit-card__num">06</div>
+            <h3 data-i18n="benefits.items.5.title">AI 창업자 커뮤니티</h3>
+            <p class="benefit-card__value" data-i18n="benefits.items.5.value">네트워크</p>
+            <p data-i18n="benefits.items.5.desc">정기 오프라인 밋업과 온라인 세션 운영.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- =========================
+         PROCESS
+    ========================= -->
+    <section class="section process" id="process">
+      <div class="container">
+        <div class="section__head">
+          <span class="section__label" data-i18n="process.label">03 — How It Works</span>
+          <h2 class="section__title" data-i18n="process.title">선발은 네 단계로 진행됩니다.</h2>
+          <p class="section__sub" data-i18n="process.sub">이번 심사에서 투자로 이어지지 않아도, 스파크랩과의 인연은 이어집니다.</p>
+        </div>
+
+        <ol class="process__steps">
+          <li class="step">
+            <div class="step__num">01</div>
+            <div class="step__content">
+              <h3 data-i18n="process.steps.0.title">온라인 신청</h3>
+              <p data-i18n="process.steps.0.desc">스파크랩 공식 홈페이지를 통해 지원서를 제출합니다.</p>
+            </div>
+          </li>
+          <li class="step">
+            <div class="step__num">02</div>
+            <div class="step__content">
+              <h3 data-i18n="process.steps.1.title">서류 스크리닝</h3>
+              <p data-i18n="process.steps.1.desc">AI를 &lsquo;팀원&rsquo;처럼 운용한 방식을 중심으로 평가합니다.</p>
+            </div>
+          </li>
+          <li class="step">
+            <div class="step__num">03</div>
+            <div class="step__content">
+              <h3 data-i18n="process.steps.2.title">집중 부트캠프</h3>
+              <p data-i18n="process.steps.2.desc">스파크랩 파트너들과 함께하는 몰입형 부트캠프.</p>
+            </div>
+          </li>
+          <li class="step">
+            <div class="step__num">04</div>
+            <div class="step__content">
+              <h3 data-i18n="process.steps.3.title">최종 투자 심사</h3>
+              <p data-i18n="process.steps.3.desc">통과 시 초기 투자 및 포트폴리오 혜택 제공.</p>
+            </div>
+          </li>
+        </ol>
+
+        <div class="process__note">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+          <p data-i18n="process.note">투자로 이어지지 않은 창업가는 Stage 2 · Stage 3 풀로 분류되어 후속 배치 우선 지원 자격과 커뮤니티 멤버십이 유지됩니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         ABOUT SPARKLABS
+    ========================= -->
+    <section class="section about" id="about">
+      <div class="container">
+        <div class="about__grid">
+          <div class="about__text">
+            <span class="section__label" data-i18n="about.label">04 — About SparkLabs</span>
+            <h2 class="section__title" data-i18n="about.title">OpenAI, Anthropic, Perplexity를 초기에 알아본 액셀러레이터.</h2>
+            <p data-i18n="about.body.p1">스파크랩은 글로벌 AI 시장의 초기 단계부터 핵심 기업을 알아보고 투자해온 액셀러레이터입니다.</p>
+            <p data-i18n="about.body.p2">사우디 정부와 공동 운용 중인 5,000만 달러(약 670억원) 규모의 AIM AI 펀드를 보유하고 있으며, 국내 생태계에서도 AI 기업 투자를 대표하는 기관으로 자리매김하고 있습니다.</p>
+            <blockquote class="about__quote">
+              <p data-i18n="about.quote.text">&ldquo;에이전틱 AI 시대에는 뛰어난 창업가 한 명이 AI 팀과 함께 시장을 바꿀 수 있습니다. Spark Claw는 그런 창업가들을 가장 먼저, 가장 깊이 이해하기 위한 프로그램입니다.&rdquo;</p>
+              <cite data-i18n="about.quote.cite">김유진 · 스파크랩 대표</cite>
+            </blockquote>
+          </div>
+
+          <ul class="about__facts">
+            <li>
+              <span class="about__fact-num">3</span>
+              <span class="about__fact-label" data-i18n="about.facts.0">OpenAI · Anthropic · Perplexity 초기 투자 이력</span>
+            </li>
+            <li>
+              <span class="about__fact-num">$50M</span>
+              <span class="about__fact-label" data-i18n="about.facts.1">사우디 정부와 공동 운용 AIM AI Fund</span>
+            </li>
+            <li>
+              <span class="about__fact-num">300+</span>
+              <span class="about__fact-label" data-i18n="about.facts.2">글로벌 포트폴리오사</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         FAQ
+    ========================= -->
+    <section class="section faq" id="faq">
+      <div class="container">
+        <div class="section__head">
+          <span class="section__label" data-i18n="faq.label">05 — FAQ</span>
+          <h2 class="section__title" data-i18n="faq.title">자주 묻는 질문</h2>
+        </div>
+
+        <ul class="faq__list">
+          <li class="faq-item">
+            <button type="button" class="faq-item__q" aria-expanded="false">
+              <span data-i18n="faq.items.0.q">공동창업자 없이도 정말 지원할 수 있나요?</span>
+              <span class="faq-item__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-item__a">
+              <p data-i18n="faq.items.0.a">네. Spark Claw는 1인 창업자를 위한 프로그램입니다. 팀이 없다는 것은 결격 사유가 아니라 프로그램의 전제입니다. AI 에이전트를 팀원처럼 설계하고 운용한 기록이 가장 중요한 평가 지표입니다.</p>
+            </div>
+          </li>
+          <li class="faq-item">
+            <button type="button" class="faq-item__q" aria-expanded="false">
+              <span data-i18n="faq.items.1.q">아이디어 단계에서도 지원이 가능한가요?</span>
+              <span class="faq-item__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-item__a">
+              <p data-i18n="faq.items.1.a">가능합니다. 제품 완성도보다 &lsquo;AI를 팀원처럼 활용한 맥락&rsquo;을 중점적으로 평가합니다. MVP가 없다면, 어떤 에이전트/워크플로우를 구축해왔는지 구체적으로 기술해주세요.</p>
+            </div>
+          </li>
+          <li class="faq-item">
+            <button type="button" class="faq-item__q" aria-expanded="false">
+              <span data-i18n="faq.items.2.q">이번에 투자로 이어지지 않으면 어떻게 되나요?</span>
+              <span class="faq-item__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-item__a">
+              <p data-i18n="faq.items.2.a">Stage 2 · Stage 3 풀로 분류되어 후속 배치 프로그램 우선 지원 자격과 커뮤니티 멤버십이 유지됩니다. 한 번의 심사로 인연이 끊기지 않도록 설계되어 있습니다.</p>
+            </div>
+          </li>
+          <li class="faq-item">
+            <button type="button" class="faq-item__q" aria-expanded="false">
+              <span data-i18n="faq.items.3.q">온라인 중심인가요, 오프라인 모임도 있나요?</span>
+              <span class="faq-item__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-item__a">
+              <p data-i18n="faq.items.3.a">온라인 세션을 중심으로 운영하되, AI 창업가 커뮤니티 형성을 위한 정기 오프라인 밋업을 병행합니다.</p>
+            </div>
+          </li>
+          <li class="faq-item">
+            <button type="button" class="faq-item__q" aria-expanded="false">
+              <span data-i18n="faq.items.4.q">해외 창업가도 지원할 수 있나요?</span>
+              <span class="faq-item__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-item__a">
+              <p data-i18n="faq.items.4.a">한국 시장 진출 또는 한국 기반 창업 계획이 있다면 지원 가능합니다. 세부 자격 요건은 1기 모집 공고를 통해 공개됩니다.</p>
+            </div>
+          </li>
+          <li class="faq-item">
+            <button type="button" class="faq-item__q" aria-expanded="false">
+              <span data-i18n="faq.items.5.q">1기 모집 일정은 언제 공개되나요?</span>
+              <span class="faq-item__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-item__a">
+              <p data-i18n="faq.items.5.a">세부 일정과 지원 자격은 순차적으로 공개됩니다. 이메일 알림을 등록해두시면 가장 먼저 안내드립니다.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- =========================
+         NOTIFY / COMING SOON
+    ========================= -->
+    <section class="section notify" id="notify">
+      <div class="container">
+        <div class="notify__card">
+          <span class="section__label" data-i18n="notify.label">Cohort 01 · Coming Soon</span>
+          <h2 class="notify__title">
+            <span data-i18n="notify.title.line1">가장 먼저</span>
+            <span class="accent" data-i18n="notify.title.line2">당신에게</span>
+            <span data-i18n="notify.title.line3">알리겠습니다.</span>
+          </h2>
+          <p class="notify__sub" data-i18n="notify.sub">모집 오픈, 부트캠프 일정, 자격 요건이 공개되는 즉시 이메일로 안내드립니다.</p>
+
+          <!--
+            NOTE: Replace the action URL below with your own Formspree / Web3Forms endpoint
+                  before deploying to production.
+                  Example: https://formspree.io/f/YOUR_FORM_ID
+          -->
+          <form class="notify__form" action="https://formspree.io/f/REPLACE_ME" method="POST">
+            <input type="hidden" name="_subject" value="[Spark Claw] Cohort 01 notify signup" />
+            <label class="sr-only" for="notify-email" data-i18n="notify.form.emailLabel">이메일</label>
+            <input id="notify-email" name="email" type="email" required autocomplete="email"
+                   data-i18n-placeholder="notify.form.emailPlaceholder" placeholder="name@company.com" />
+            <button type="submit" class="btn btn--primary" data-i18n="notify.form.submit">알림 받기</button>
+            <p class="notify__privacy" data-i18n="notify.form.privacy">이메일 주소는 Spark Claw 관련 안내에만 사용됩니다.</p>
+            <p class="notify__success" role="status" data-i18n="notify.form.success" hidden>등록되었습니다. Cohort 01 소식을 가장 먼저 받아보실 수 있습니다.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="nav__wordmark">SPARK CLAW</span>
+        <p data-i18n="footer.tagline">A program by SparkLabs.</p>
+      </div>
+
+      <nav class="footer__links" aria-label="Footer">
+        <a href="https://www.sparklabs.co.kr" target="_blank" rel="noopener" data-i18n="footer.links.sparklabs">SparkLabs</a>
+        <a href="#notify" data-i18n="footer.links.apply">Notify Me</a>
+        <a href="mailto:hello@sparklabs.co.kr" data-i18n="footer.links.contact">Contact</a>
+      </nav>
+
+      <p class="footer__copy">
+        <span data-i18n="footer.copy">© 2026 SparkLabs. All rights reserved.</span>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+/* =========================
+   Spark Claw — script.js
+   - Bilingual (KO/EN) content dictionary
+   - Language toggle with localStorage persistence
+   - FAQ accordion
+   - Nav scroll state + mobile menu
+   - Email form handler
+========================= */
+
+(function () {
+  'use strict';
+
+  // ---- i18n dictionary ------------------------------------------------------
+  const dict = {
+    ko: {
+      meta: {
+        title: "Spark Claw — AI 네이티브 1인 창업자 프로그램",
+        description: "스파크랩이 제안하는 에이전틱 AI 시대의 1인 창업자 전문 액셀러레이팅 프로그램. AI가 당신의 팀입니다."
+      },
+      nav: {
+        philosophy: "철학", benefits: "혜택", process: "프로세스", about: "스파크랩", faq: "FAQ",
+        cta: "알림 받기"
+      },
+      hero: {
+        eyebrow: "스파크랩 · Cohort 01 사전 모집",
+        title: { line1: "AI가", line2: "당신의 팀", line3: "입니다." },
+        sub: "Spark Claw는 에이전틱 AI 시대의 1인 창업가를 위한 스파크랩의 첫 프로그램입니다. 팀 없이도, AI와 함께라면 충분합니다.",
+        ctaPrimary: "1기 모집 알림 받기",
+        ctaSecondary: "프로그램 철학 읽기 →",
+        stat1: { label: "초기 투자 규모", value: "₩50M – 100M" },
+        stat2: { label: "지원 대상",     value: "1인 AI 창업자" },
+        stat3: { label: "운영 방식",     value: "온라인 중심 + 오프라인 밋업" }
+      },
+      philosophy: {
+        label: "01 — Philosophy",
+        quote: {
+          part1: "뛰어난 CEO의 핵심은",
+          part2: "팀원을 얼마나 잘 이끄느냐",
+          part3: "에 있습니다.",
+          part4: "그 팀이 AI여도 마찬가지입니다."
+        },
+        body: {
+          p1: "기획과 개발, 마케팅, 고객 대응까지 AI 에이전트가 담당하는 시대입니다. Spark Claw는 AI를 ‘도구’가 아닌 ‘팀원’으로 활용하는 창업가를 발굴합니다.",
+          p2: "Spark Claw는 AI 네이티브 창업가 한 명 한 명에 투자하는 데서 멈추지 않습니다. 이들을 한 자리에 모아 국내에서 가장 강력한 <em class=\"accent\">AI 창업자 커뮤니티</em>를 만들어갑니다. 1인 창업가에게는 동료가 곧 가장 강력한 레버리지이기 때문입니다."
+        }
+      },
+      benefits: {
+        label: "02 — What You Get",
+        title: "창업 초기, 가장 필요한 것부터.",
+        sub: "스파크랩 포트폴리오사에 제공되는 혜택이 동일하게 적용됩니다.",
+        items: [
+          { title: "초기 투자",             value: "₩50M – 100M",  desc: "집중 부트캠프를 통과한 창업가 대상 초기 투자." },
+          { title: "OpenAI API 크레딧",     value: "AI 인프라",     desc: "GPT 모델과 에이전트 툴 구축을 위한 크레딧." },
+          { title: "Anthropic Claude 크레딧", value: "AI 인프라",   desc: "Claude 기반 에이전틱 워크플로우 구축 지원." },
+          { title: "AWS 스타트업 혜택",      value: "클라우드",      desc: "AWS 스타트업 프로그램 연계 할인 혜택." },
+          { title: "글로벌 SaaS 패키지",     value: "운영 도구",     desc: "AI 창업에 필수적인 툴 스택을 한 번에." },
+          { title: "AI 창업자 커뮤니티",     value: "네트워크",      desc: "정기 오프라인 밋업과 온라인 세션 운영." }
+        ]
+      },
+      process: {
+        label: "03 — How It Works",
+        title: "선발은 네 단계로 진행됩니다.",
+        sub: "이번 심사에서 투자로 이어지지 않아도, 스파크랩과의 인연은 이어집니다.",
+        steps: [
+          { title: "온라인 신청",    desc: "스파크랩 공식 홈페이지를 통해 지원서를 제출합니다." },
+          { title: "서류 스크리닝",  desc: "AI를 ‘팀원’처럼 운용한 방식을 중심으로 평가합니다." },
+          { title: "집중 부트캠프",  desc: "스파크랩 파트너들과 함께하는 몰입형 부트캠프." },
+          { title: "최종 투자 심사", desc: "통과 시 초기 투자 및 포트폴리오 혜택 제공." }
+        ],
+        note: "투자로 이어지지 않은 창업가는 Stage 2 · Stage 3 풀로 분류되어 후속 배치 우선 지원 자격과 커뮤니티 멤버십이 유지됩니다."
+      },
+      about: {
+        label: "04 — About SparkLabs",
+        title: "OpenAI, Anthropic, Perplexity를 초기에 알아본 액셀러레이터.",
+        body: {
+          p1: "스파크랩은 글로벌 AI 시장의 초기 단계부터 핵심 기업을 알아보고 투자해온 액셀러레이터입니다.",
+          p2: "사우디 정부와 공동 운용 중인 5,000만 달러(약 670억원) 규모의 AIM AI 펀드를 보유하고 있으며, 국내 생태계에서도 AI 기업 투자를 대표하는 기관으로 자리매김하고 있습니다."
+        },
+        quote: {
+          text: "“에이전틱 AI 시대에는 뛰어난 창업가 한 명이 AI 팀과 함께 시장을 바꿀 수 있습니다. Spark Claw는 그런 창업가들을 가장 먼저, 가장 깊이 이해하기 위한 프로그램입니다.”",
+          cite: "김유진 · 스파크랩 대표"
+        },
+        facts: [
+          "OpenAI · Anthropic · Perplexity 초기 투자 이력",
+          "사우디 정부와 공동 운용 AIM AI Fund",
+          "글로벌 포트폴리오사"
+        ]
+      },
+      faq: {
+        label: "05 — FAQ",
+        title: "자주 묻는 질문",
+        items: [
+          { q: "공동창업자 없이도 정말 지원할 수 있나요?",
+            a: "네. Spark Claw는 1인 창업자를 위한 프로그램입니다. 팀이 없다는 것은 결격 사유가 아니라 프로그램의 전제입니다. AI 에이전트를 팀원처럼 설계하고 운용한 기록이 가장 중요한 평가 지표입니다." },
+          { q: "아이디어 단계에서도 지원이 가능한가요?",
+            a: "가능합니다. 제품 완성도보다 ‘AI를 팀원처럼 활용한 맥락’을 중점적으로 평가합니다. MVP가 없다면, 어떤 에이전트 / 워크플로우를 구축해왔는지 구체적으로 기술해주세요." },
+          { q: "이번에 투자로 이어지지 않으면 어떻게 되나요?",
+            a: "Stage 2 · Stage 3 풀로 분류되어 후속 배치 프로그램 우선 지원 자격과 커뮤니티 멤버십이 유지됩니다. 한 번의 심사로 인연이 끊기지 않도록 설계되어 있습니다." },
+          { q: "온라인 중심인가요, 오프라인 모임도 있나요?",
+            a: "온라인 세션을 중심으로 운영하되, AI 창업가 커뮤니티 형성을 위한 정기 오프라인 밋업을 병행합니다." },
+          { q: "해외 창업가도 지원할 수 있나요?",
+            a: "한국 시장 진출 또는 한국 기반 창업 계획이 있다면 지원 가능합니다. 세부 자격 요건은 1기 모집 공고를 통해 공개됩니다." },
+          { q: "1기 모집 일정은 언제 공개되나요?",
+            a: "세부 일정과 지원 자격은 순차적으로 공개됩니다. 이메일 알림을 등록해두시면 가장 먼저 안내드립니다." }
+        ]
+      },
+      notify: {
+        label: "Cohort 01 · Coming Soon",
+        title: { line1: "가장 먼저", line2: " 당신에게 ", line3: "알리겠습니다." },
+        sub: "모집 오픈, 부트캠프 일정, 자격 요건이 공개되는 즉시 이메일로 안내드립니다.",
+        form: {
+          emailLabel: "이메일",
+          emailPlaceholder: "name@company.com",
+          submit: "알림 받기",
+          privacy: "이메일 주소는 Spark Claw 관련 안내에만 사용됩니다.",
+          success: "등록되었습니다. Cohort 01 소식을 가장 먼저 받아보실 수 있습니다."
+        }
+      },
+      footer: {
+        tagline: "스파크랩의 1인 창업자 전문 프로그램.",
+        links: { sparklabs: "스파크랩", apply: "알림 받기", contact: "문의하기" },
+        copy: "© 2026 SparkLabs. All rights reserved."
+      }
+    },
+
+    en: {
+      meta: {
+        title: "Spark Claw — An accelerator for AI-native solo founders",
+        description: "SparkLabs' first accelerator program purpose-built for solo founders in the era of Agentic AI. AI is your team."
+      },
+      nav: {
+        philosophy: "Philosophy", benefits: "Benefits", process: "Process", about: "About", faq: "FAQ",
+        cta: "Notify me"
+      },
+      hero: {
+        eyebrow: "SparkLabs · Cohort 01 · Pre-launch",
+        title: { line1: "AI is", line2: " your team", line3: "." },
+        sub: "Spark Claw is SparkLabs' first program built for solo founders in the age of Agentic AI. With AI as your co-builder, you're never alone.",
+        ctaPrimary: "Get notified for Cohort 01",
+        ctaSecondary: "Read our thesis →",
+        stat1: { label: "Initial investment", value: "KRW 50M – 100M" },
+        stat2: { label: "Who we back",        value: "Solo AI founders" },
+        stat3: { label: "Format",             value: "Online-first, offline meetups" }
+      },
+      philosophy: {
+        label: "01 — Philosophy",
+        quote: {
+          part1: "A great CEO is defined",
+          part2: "by how well they lead their team. ",
+          part3: "",
+          part4: "Even when that team is AI."
+        },
+        body: {
+          p1: "Agentic AI now ships product, writes code, runs marketing, and handles customer ops. Spark Claw backs founders who treat AI not as a tool, but as a teammate.",
+          p2: "Spark Claw doesn't stop at backing AI-native founders one by one. We bring them together to build <em class=\"accent\">Korea's strongest community of AI-native founders</em> — because for a solo operator, peers are the most powerful form of leverage."
+        }
+      },
+      benefits: {
+        label: "02 — What you get",
+        title: "The essentials — from day one.",
+        sub: "The same support every SparkLabs portfolio company receives.",
+        items: [
+          { title: "Seed investment",           value: "KRW 50M – 100M", desc: "Initial check for founders who complete the intensive bootcamp." },
+          { title: "OpenAI API credits",        value: "AI infrastructure", desc: "Credits to build on GPT models and agent tooling." },
+          { title: "Anthropic Claude credits",  value: "AI infrastructure", desc: "Support for building Claude-powered agentic workflows." },
+          { title: "AWS startup perks",         value: "Cloud",           desc: "Discounts through the AWS startup program." },
+          { title: "Global SaaS stack",         value: "Operations",      desc: "The essential tooling for an AI-native company — bundled." },
+          { title: "AI founders community",     value: "Network",         desc: "Regular offline meetups and a working online cohort." }
+        ]
+      },
+      process: {
+        label: "03 — How it works",
+        title: "Four steps, one clear path.",
+        sub: "Not funded this round? Your relationship with SparkLabs doesn't end there.",
+        steps: [
+          { title: "Online application", desc: "Submit your application through the SparkLabs site." },
+          { title: "Screening",          desc: "We review how you've built with AI as a teammate — not just a tool." },
+          { title: "Intensive bootcamp", desc: "A focused sprint alongside SparkLabs partners." },
+          { title: "Investment decision", desc: "Founders who advance receive the initial check and full portfolio benefits." }
+        ],
+        note: "Founders who aren't funded this round join SparkLabs' Stage 2 or Stage 3 pool — with priority access to future cohorts and ongoing community membership."
+      },
+      about: {
+        label: "04 — About SparkLabs",
+        title: "Early backers of OpenAI, Anthropic, and Perplexity.",
+        body: {
+          p1: "SparkLabs is a global accelerator that has identified and backed the defining AI companies at their earliest stages.",
+          p2: "We co-manage the USD 50M AIM AI Fund with the Government of Saudi Arabia, and are among the most active institutional AI investors in Korea."
+        },
+        quote: {
+          text: "\u201CIn the age of Agentic AI, a single outstanding founder can change a market alongside an AI team. Spark Claw exists to understand those founders — earlier and more deeply than anyone else.\u201D",
+          cite: "Eugene Kim · Managing Partner, SparkLabs"
+        },
+        facts: [
+          "Early-stage backer of OpenAI, Anthropic & Perplexity",
+          "AIM AI Fund — co-managed with the Saudi government",
+          "Global portfolio companies"
+        ]
+      },
+      faq: {
+        label: "05 — FAQ",
+        title: "Frequently asked",
+        items: [
+          { q: "Can I really apply without a co-founder?",
+            a: "Yes. Spark Claw is built specifically for solo founders. No traditional team isn't a gap — it's the premise. What we evaluate most closely is how you've designed and orchestrated AI agents as teammates." },
+          { q: "Can I apply at the idea stage?",
+            a: "Yes. We care less about product polish and more about how you've worked with AI as a teammate. If there's no MVP yet, show us the agents and workflows you've built along the way." },
+          { q: "What if I don't receive investment this round?",
+            a: "You'll join our Stage 2 or Stage 3 pool, with priority access to future cohorts and ongoing community membership. A single decision never ends the relationship." },
+          { q: "Is the program fully online?",
+            a: "Online-first, with regular offline meetups to build a working community of AI-native founders in Korea." },
+          { q: "Can international founders apply?",
+            a: "Yes — if you plan to build in or for the Korean market. Full eligibility will be published with the Cohort 01 announcement." },
+          { q: "When will Cohort 01 timing be announced?",
+            a: "We'll share timing, eligibility, and application details in phases. Subscribe below and you'll hear first." }
+        ]
+      },
+      notify: {
+        label: "Cohort 01 · Coming soon",
+        title: { line1: "Hear about it", line2: " first.", line3: "" },
+        sub: "We'll email you the moment applications open — along with the bootcamp schedule and eligibility details.",
+        form: {
+          emailLabel: "Email",
+          emailPlaceholder: "name@company.com",
+          submit: "Notify me",
+          privacy: "We'll only use your email for Spark Claw updates.",
+          success: "You're on the list. You'll hear about Cohort 01 first."
+        }
+      },
+      footer: {
+        tagline: "A SparkLabs program for solo founders.",
+        links: { sparklabs: "SparkLabs", apply: "Notify me", contact: "Contact" },
+        copy: "© 2026 SparkLabs. All rights reserved."
+      }
+    }
+  };
+
+  // ---- Utility: resolve dotted key path on dict --------------------------
+  function resolve(obj, path) {
+    return path.split('.').reduce((acc, part) => {
+      if (acc == null) return undefined;
+      // Support array index like "items.0.q"
+      return acc[part];
+    }, obj);
+  }
+
+  // ---- Apply translations ------------------------------------------------
+  function applyLang(lang) {
+    const data = dict[lang] || dict.ko;
+    document.documentElement.lang = lang;
+
+    // text content
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      const value = resolve(data, key);
+      if (typeof value === 'string') {
+        // Allow limited HTML (<em>, <br>, <strong>) in translation strings
+        if (/<(em|strong|br|span)[\s/>]/i.test(value)) {
+          el.innerHTML = value;
+        } else {
+          el.textContent = value;
+        }
+      }
+    });
+
+    // placeholders
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      const key = el.getAttribute('data-i18n-placeholder');
+      const value = resolve(data, key);
+      if (typeof value === 'string') el.setAttribute('placeholder', value);
+    });
+
+    // meta
+    if (data.meta) {
+      if (data.meta.title) document.title = data.meta.title;
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc && data.meta.description) metaDesc.setAttribute('content', data.meta.description);
+    }
+
+    // toggle button states
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.setAttribute('aria-pressed', String(btn.dataset.lang === lang));
+    });
+
+    // persist
+    try { localStorage.setItem('sparkclaw.lang', lang); } catch (_) {}
+  }
+
+  // ---- Language toggle wiring --------------------------------------------
+  function initLangToggle() {
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+    });
+
+    // initial: saved > browser > default ko
+    let initial = 'ko';
+    try {
+      const saved = localStorage.getItem('sparkclaw.lang');
+      if (saved && dict[saved]) initial = saved;
+      else if (navigator.language && navigator.language.toLowerCase().startsWith('en')) initial = 'en';
+    } catch (_) {}
+    applyLang(initial);
+  }
+
+  // ---- FAQ accordion ------------------------------------------------------
+  function initFaq() {
+    document.querySelectorAll('.faq-item__q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item  = btn.parentElement;
+        const panel = item.querySelector('.faq-item__a');
+        const open  = btn.getAttribute('aria-expanded') === 'true';
+
+        // close siblings (optional accordion behavior)
+        document.querySelectorAll('.faq-item__q[aria-expanded="true"]').forEach(other => {
+          if (other !== btn) {
+            other.setAttribute('aria-expanded', 'false');
+            other.parentElement.querySelector('.faq-item__a').style.maxHeight = '0px';
+          }
+        });
+
+        if (open) {
+          btn.setAttribute('aria-expanded', 'false');
+          panel.style.maxHeight = '0px';
+        } else {
+          btn.setAttribute('aria-expanded', 'true');
+          panel.style.maxHeight = panel.scrollHeight + 'px';
+        }
+      });
+    });
+  }
+
+  // ---- Nav scroll state + mobile menu ------------------------------------
+  function initNav() {
+    const nav = document.querySelector('.nav');
+    const onScroll = () => {
+      if (window.scrollY > 8) nav.classList.add('is-scrolled');
+      else nav.classList.remove('is-scrolled');
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    const menuBtn = document.querySelector('.nav__menu');
+    if (menuBtn) {
+      menuBtn.addEventListener('click', () => {
+        const open = document.body.classList.toggle('nav-open');
+        menuBtn.setAttribute('aria-expanded', String(open));
+      });
+
+      document.querySelectorAll('.nav__links a').forEach(link => {
+        link.addEventListener('click', () => {
+          document.body.classList.remove('nav-open');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+  }
+
+  // ---- Notify form handler -----------------------------------------------
+  function initNotifyForm() {
+    const form = document.querySelector('.notify__form');
+    if (!form) return;
+
+    form.addEventListener('submit', async (e) => {
+      // If the action still contains the placeholder, handle locally (success UX only).
+      const action = form.getAttribute('action') || '';
+      const isPlaceholder = action.includes('REPLACE_ME') || action.trim() === '';
+
+      if (isPlaceholder) {
+        e.preventDefault();
+        showSuccess(form);
+        return;
+      }
+
+      // Otherwise: submit via fetch (Formspree-compatible) for inline success.
+      e.preventDefault();
+      try {
+        const res = await fetch(action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          showSuccess(form);
+        } else {
+          form.submit(); // fallback: full-page submit
+        }
+      } catch (_) {
+        form.submit();
+      }
+    });
+  }
+
+  function showSuccess(form) {
+    const success = form.querySelector('.notify__success');
+    const input   = form.querySelector('input[type="email"]');
+    const submit  = form.querySelector('button[type="submit"]');
+    if (success) success.hidden = false;
+    if (input) { input.value = ''; input.disabled = true; }
+    if (submit) submit.disabled = true;
+  }
+
+  // ---- Year stamp --------------------------------------------------------
+  function stampYear() {
+    const year = new Date().getFullYear();
+    document.querySelectorAll('[data-year]').forEach(el => { el.textContent = year; });
+  }
+
+  // ---- Boot --------------------------------------------------------------
+  document.addEventListener('DOMContentLoaded', () => {
+    initLangToggle();
+    initFaq();
+    initNav();
+    initNotifyForm();
+    stampYear();
+  });
+})();
+
+</script>
+</body>
+</html>
