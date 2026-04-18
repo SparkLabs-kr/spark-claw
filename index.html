@@ -356,12 +356,8 @@
           </h2>
           <p class="notify__sub" data-i18n="notify.sub">모집 오픈, 부트캠프 일정, 자격 요건이 공개되는 즉시 이메일로 안내드립니다.</p>
 
-          <!--
-            NOTE: Replace the action URL below with your own Formspree / Web3Forms endpoint
-                  before deploying to production.
-                  Example: https://formspree.io/f/YOUR_FORM_ID
-          -->
-          <form class="notify__form" action="https://formspree.io/f/REPLACE_ME" method="POST">
+          <!-- Formspree endpoint — submissions notify mido.jang@gmail.com -->
+          <form class="notify__form" action="https://formspree.io/f/mqewqobg" method="POST">
             <input type="hidden" name="_subject" value="[Spark Claw] Cohort 01 notify signup" />
             <label class="sr-only" for="notify-email" data-i18n="notify.form.emailLabel">이메일</label>
             <input id="notify-email" name="email" type="email" required autocomplete="email"
