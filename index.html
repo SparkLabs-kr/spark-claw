@@ -477,6 +477,33 @@ html[lang="en"] .hero__title { letter-spacing: -0.04em; }
   .philosophy__body { grid-template-columns: 1fr; }
 }
 
+/* Divider between two philosophy blocks */
+.philosophy__divider {
+  height: 1px;
+  background: var(--border);
+  margin: 88px 0 64px;
+  max-width: 1000px;
+}
+@media (max-width: 720px) {
+  .philosophy__divider { margin: 56px 0 40px; }
+}
+
+/* Benefits disclaimer note (under cards) */
+.benefits__note {
+  margin: 24px 0 0;
+  padding: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+  text-align: left;
+  font-family: var(--font-mono);
+  letter-spacing: 0.005em;
+}
+.benefits__note::before {
+  content: "* ";
+  color: var(--accent);
+}
+
 /* =========================
    Benefits
 ========================= */
@@ -974,8 +1001,7 @@ html[lang="en"] .hero__title { letter-spacing: -0.04em; }
           </h1>
 
           <p class="hero__sub" data-i18n="hero.sub">
-            Spark Claw는 에이전틱 AI 시대의 1인 창업가를 위한 스파크랩의 첫 프로그램입니다.
-            팀 없이도, AI와 함께라면 충분합니다.
+            Spark Claw는 에이전틱 AI 시대의 1인 및 소규모 팀 창업가를 위한 스파크랩의 첫 프로그램입니다.
           </p>
 
           <div class="hero__cta">
@@ -990,11 +1016,11 @@ html[lang="en"] .hero__title { letter-spacing: -0.04em; }
             </div>
             <div>
               <dt data-i18n="hero.stat2.label">지원 대상</dt>
-              <dd data-i18n="hero.stat2.value">1인 AI 창업자</dd>
+              <dd data-i18n="hero.stat2.value">1인 또는 소규모 팀의 AI 창업자</dd>
             </div>
             <div>
               <dt data-i18n="hero.stat3.label">운영 방식</dt>
-              <dd data-i18n="hero.stat3.value">온라인 중심 + 오프라인 밋업</dd>
+              <dd data-i18n="hero.stat3.value">온라인/오프라인 오피스 아워 + Group Session (워크샵/강의) + AI 커뮤니티 오프라인 밋업</dd>
             </div>
           </dl>
         </div>
@@ -1033,6 +1059,22 @@ html[lang="en"] .hero__title { letter-spacing: -0.04em; }
             이들을 한 자리에 모아 국내에서 가장 강력한 <em class="accent">AI 창업자 커뮤니티</em>를 만들어갑니다. 1인 창업가에게는 동료가 곧 가장 강력한 레버리지이기 때문입니다.
           </p>
         </div>
+
+        <div class="philosophy__divider" aria-hidden="true"></div>
+
+        <h2 class="philosophy__quote">
+          <span data-i18n="philosophy.quote2.part1">세상을 바꾸는 건 아이디어가 아니라 실행입니다.</span>
+          <span class="accent" data-i18n="philosophy.quote2.part2">우리는 실행으로 증명하는 빌더(Builder)를 찾고 있습니다.</span>
+        </h2>
+
+        <div class="philosophy__body">
+          <p data-i18n="philosophy.body2.p1">
+            AI는 리서치와 개발의 장벽을 빠르게 무너뜨렸습니다. 이제 누구나 아이디어를 실행으로 옮길 수 있는 시대입니다.
+          </p>
+          <p data-i18n="philosophy.body2.p2">
+            우리는 아이디어보다 실행을, 계획보다 결과를 만들어내는 빌더(Builder)에게 주목합니다.
+          </p>
+        </div>
       </div>
     </section>
 
@@ -1064,27 +1106,29 @@ html[lang="en"] .hero__title { letter-spacing: -0.04em; }
             <div class="benefit-card__num">03</div>
             <h3 data-i18n="benefits.items.2.title">Anthropic Claude 크레딧</h3>
             <p class="benefit-card__value" data-i18n="benefits.items.2.value">AI 인프라</p>
-            <p data-i18n="benefits.items.2.desc">Claude 기반 에이전틱 워크플로우 구축 지원.</p>
+            <p data-i18n="benefits.items.2.desc">Tier 4 등급 Claude 기반 에이전틱 워크플로우 구축 지원</p>
           </li>
           <li class="benefit-card">
             <div class="benefit-card__num">04</div>
-            <h3 data-i18n="benefits.items.3.title">AWS 스타트업 혜택</h3>
-            <p class="benefit-card__value" data-i18n="benefits.items.3.value">클라우드</p>
-            <p data-i18n="benefits.items.3.desc">AWS 스타트업 프로그램 연계 할인 혜택.</p>
+            <h3 data-i18n="benefits.items.3.title">GCP (Gemini)</h3>
+            <p class="benefit-card__value" data-i18n="benefits.items.3.value">AI 인프라</p>
+            <p data-i18n="benefits.items.3.desc">Gemini API 가용 크레딧 지원</p>
           </li>
           <li class="benefit-card">
             <div class="benefit-card__num">05</div>
-            <h3 data-i18n="benefits.items.4.title">글로벌 SaaS 패키지</h3>
-            <p class="benefit-card__value" data-i18n="benefits.items.4.value">운영 도구</p>
-            <p data-i18n="benefits.items.4.desc">AI 창업에 필수적인 툴 스택을 한 번에.</p>
+            <h3 data-i18n="benefits.items.4.title">Microsoft Azure</h3>
+            <p class="benefit-card__value" data-i18n="benefits.items.4.value">AI 인프라</p>
+            <p data-i18n="benefits.items.4.desc">Azure 크레딧 지원, Azure 엔지니어와의 1:1 세션 지원</p>
           </li>
           <li class="benefit-card">
             <div class="benefit-card__num">06</div>
             <h3 data-i18n="benefits.items.5.title">AI 창업자 커뮤니티</h3>
             <p class="benefit-card__value" data-i18n="benefits.items.5.value">네트워크</p>
-            <p data-i18n="benefits.items.5.desc">정기 오프라인 밋업과 온라인 세션 운영.</p>
+            <p data-i18n="benefits.items.5.desc">커뮤니티형 세션 및 오프라인 밋업 개최</p>
           </li>
         </ul>
+
+        <p class="benefits__note" data-i18n="benefits.note">기업별 기존 사용량에 따라 팀별 제공 크레딧의 총량은 달라질 수 있습니다.</p>
       </div>
     </section>
 
@@ -1096,7 +1140,7 @@ html[lang="en"] .hero__title { letter-spacing: -0.04em; }
         <div class="section__head">
           <span class="section__label is-green" data-i18n="process.label">03 — How It Works</span>
           <h2 class="section__title" data-i18n="process.title">선발은 네 단계로 진행됩니다.</h2>
-          <p class="section__sub" data-i18n="process.sub">이번 심사에서 투자로 이어지지 않아도, 스파크랩과의 인연은 이어집니다.</p>
+          <p class="section__sub" data-i18n="process.sub">이번 심사에서 투자로 이어지지 않아도, Spark Claw 커뮤니티와의 인연은 이어집니다.</p>
         </div>
 
         <ol class="process__steps">
@@ -1104,28 +1148,28 @@ html[lang="en"] .hero__title { letter-spacing: -0.04em; }
             <div class="step__num">01</div>
             <div class="step__content">
               <h3 data-i18n="process.steps.0.title">온라인 신청</h3>
-              <p data-i18n="process.steps.0.desc">스파크랩 공식 홈페이지를 통해 지원서를 제출합니다.</p>
+              <p data-i18n="process.steps.0.desc">1) 홈페이지 하단 사전 알림받기 신청  2) Spark Claw 지원서 오픈시 작성 및 제출.</p>
             </div>
           </li>
           <li class="step">
             <div class="step__num">02</div>
             <div class="step__content">
               <h3 data-i18n="process.steps.1.title">서류 스크리닝</h3>
-              <p data-i18n="process.steps.1.desc">AI를 &lsquo;팀원&rsquo;처럼 운용한 방식을 중심으로 평가합니다.</p>
+              <p data-i18n="process.steps.1.desc">학력 및 경력 무관, AI를 &lsquo;팀원&rsquo;처럼 운용한 방식을 중심으로 평가.</p>
             </div>
           </li>
           <li class="step">
             <div class="step__num">03</div>
             <div class="step__content">
               <h3 data-i18n="process.steps.2.title">집중 부트캠프</h3>
-              <p data-i18n="process.steps.2.desc">스파크랩 파트너들과 함께하는 몰입형 부트캠프.</p>
+              <p data-i18n="process.steps.2.desc">Spark Claw 크레딧 제공, 스파크랩 파트너들과 함께하는 몰입형 부트캠프 진행.</p>
             </div>
           </li>
           <li class="step">
             <div class="step__num">04</div>
             <div class="step__content">
               <h3 data-i18n="process.steps.3.title">최종 투자 심사</h3>
-              <p data-i18n="process.steps.3.desc">통과 시 초기 투자 및 포트폴리오 혜택 제공.</p>
+              <p data-i18n="process.steps.3.desc">통과 시 초기 투자 및 스파크랩 포트폴리오사 동일 혜택 제공.</p>
             </div>
           </li>
         </ol>
@@ -1188,7 +1232,7 @@ html[lang="en"] .hero__title { letter-spacing: -0.04em; }
               <span class="faq-item__icon" aria-hidden="true">+</span>
             </button>
             <div class="faq-item__a">
-              <p data-i18n="faq.items.0.a">네. Spark Claw는 1인 창업자를 위한 프로그램입니다. 팀이 없다는 것은 결격 사유가 아니라 프로그램의 전제입니다. AI 에이전트를 팀원처럼 설계하고 운용한 기록이 가장 중요한 평가 지표입니다.</p>
+              <p data-i18n="faq.items.0.a">네, Spark Claw는 1인 창업가 혹은 소규모 팀을 위한 프로그램입니다. 팀이 없다는 것은 결격 사유가 아니라 프로그램의 전제입니다. AI 에이전트를 팀원처럼 설계하고 운용한 기록이 가장 중요한 평가 지표입니다.</p>
             </div>
           </li>
           <li class="faq-item">
@@ -1197,7 +1241,7 @@ html[lang="en"] .hero__title { letter-spacing: -0.04em; }
               <span class="faq-item__icon" aria-hidden="true">+</span>
             </button>
             <div class="faq-item__a">
-              <p data-i18n="faq.items.1.a">가능합니다. 제품 완성도보다 &lsquo;AI를 팀원처럼 활용한 맥락&rsquo;을 중점적으로 평가합니다. MVP가 없다면, 어떤 에이전트/워크플로우를 구축해왔는지 구체적으로 기술해주세요.</p>
+              <p data-i18n="faq.items.1.a">가능합니다. 제품 완성도보다 &lsquo;AI를 팀원처럼 활용한 맥락&rsquo;을 중점적으로 평가합니다. MVP가 없다면 추후 지원서를 통해 어떤 에이전트 / 워크플로우를 구축해왔는지 구체적으로 기술해주세요.</p>
             </div>
           </li>
           <li class="faq-item">
@@ -1215,7 +1259,7 @@ html[lang="en"] .hero__title { letter-spacing: -0.04em; }
               <span class="faq-item__icon" aria-hidden="true">+</span>
             </button>
             <div class="faq-item__a">
-              <p data-i18n="faq.items.3.a">온라인 세션을 중심으로 운영하되, AI 창업가 커뮤니티 형성을 위한 정기 오프라인 밋업을 병행합니다.</p>
+              <p data-i18n="faq.items.3.a">Spark Claw 프로그램은 온라인/오프라인의 다양한 워크샵과 강의 및 세션으로 이루어져 있습니다. 또한, AI 창업가 커뮤니티 형성을 위한 정기 오프라인 밋업을 진행할 예정입니다.</p>
             </div>
           </li>
           <li class="faq-item">
@@ -1233,7 +1277,16 @@ html[lang="en"] .hero__title { letter-spacing: -0.04em; }
               <span class="faq-item__icon" aria-hidden="true">+</span>
             </button>
             <div class="faq-item__a">
-              <p data-i18n="faq.items.5.a">세부 일정과 지원 자격은 순차적으로 공개됩니다. 이메일 알림을 등록해두시면 가장 먼저 안내드립니다.</p>
+              <p data-i18n="faq.items.5.a">1기 모집에 대한 상세 일정은 순차적으로 공개될 예정입니다.<br>홈페이지 우측 상단의 &lsquo;알림받기&rsquo;를 통해 사전 알림을 신청해주시면, 관련 소식을 가장 먼저 안내드리겠습니다.</p>
+            </div>
+          </li>
+          <li class="faq-item">
+            <button type="button" class="faq-item__q" aria-expanded="false">
+              <span data-i18n="faq.items.6.q">Spark Claw의 OpenAI / Anthropic / Gemini / MS Azure 크레딧은 언제 제공되나요?</span>
+              <span class="faq-item__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-item__a">
+              <p data-i18n="faq.items.6.a">심사 과정을 통과하여 부트캠프에 참여하는 팀들부터 제공됩니다.</p>
             </div>
           </li>
         </ul>
@@ -1326,12 +1379,12 @@ html[lang="en"] .hero__title { letter-spacing: -0.04em; }
       hero: {
         eyebrow: "스파크랩 · Cohort 01 사전 모집",
         title: { line1: "AI가", line2: "당신의 팀", line3: "입니다." },
-        sub: "Spark Claw는 에이전틱 AI 시대의 1인 창업가를 위한 스파크랩의 첫 프로그램입니다. 팀 없이도, AI와 함께라면 충분합니다.",
+        sub: "Spark Claw는 에이전틱 AI 시대의 1인 및 소규모 팀 창업가를 위한 스파크랩의 첫 프로그램입니다.",
         ctaPrimary: "1기 모집 알림 받기",
         ctaSecondary: "프로그램 철학 읽기 →",
         stat1: { label: "초기 투자 규모", value: "₩50M – 100M" },
-        stat2: { label: "지원 대상",     value: "1인 AI 창업자" },
-        stat3: { label: "운영 방식",     value: "온라인 중심 + 오프라인 밋업" }
+        stat2: { label: "지원 대상",     value: "1인 또는 소규모 팀의 AI 창업자" },
+        stat3: { label: "운영 방식",     value: "온라인/오프라인 오피스 아워 + Group Session (워크샵/강의) + AI 커뮤니티 오프라인 밋업" }
       },
       philosophy: {
         label: "01 — Philosophy",
@@ -1344,6 +1397,14 @@ html[lang="en"] .hero__title { letter-spacing: -0.04em; }
         body: {
           p1: "기획과 개발, 마케팅, 고객 대응까지 AI 에이전트가 담당하는 시대입니다. Spark Claw는 AI를 ‘도구’가 아닌 ‘팀원’으로 활용하는 창업가를 발굴합니다.",
           p2: "Spark Claw는 AI 네이티브 창업가 한 명 한 명에 투자하는 데서 멈추지 않습니다. 이들을 한 자리에 모아 국내에서 가장 강력한 <em class=\"accent\">AI 창업자 커뮤니티</em>를 만들어갑니다. 1인 창업가에게는 동료가 곧 가장 강력한 레버리지이기 때문입니다."
+        },
+        quote2: {
+          part1: "세상을 바꾸는 건 아이디어가 아니라 실행입니다.",
+          part2: "우리는 실행으로 증명하는 빌더(Builder)를 찾고 있습니다."
+        },
+        body2: {
+          p1: "AI는 리서치와 개발의 장벽을 빠르게 무너뜨렸습니다. 이제 누구나 아이디어를 실행으로 옮길 수 있는 시대입니다.",
+          p2: "우리는 아이디어보다 실행을, 계획보다 결과를 만들어내는 빌더(Builder)에게 주목합니다."
         }
       },
       benefits: {
@@ -1353,21 +1414,22 @@ html[lang="en"] .hero__title { letter-spacing: -0.04em; }
         items: [
           { title: "초기 투자",             value: "₩50M – 100M",  desc: "집중 부트캠프를 통과한 창업가 대상 초기 투자." },
           { title: "OpenAI API 크레딧",     value: "AI 인프라",     desc: "GPT 모델과 에이전트 툴 구축을 위한 크레딧." },
-          { title: "Anthropic Claude 크레딧", value: "AI 인프라",   desc: "Claude 기반 에이전틱 워크플로우 구축 지원." },
-          { title: "AWS 스타트업 혜택",      value: "클라우드",      desc: "AWS 스타트업 프로그램 연계 할인 혜택." },
-          { title: "글로벌 SaaS 패키지",     value: "운영 도구",     desc: "AI 창업에 필수적인 툴 스택을 한 번에." },
-          { title: "AI 창업자 커뮤니티",     value: "네트워크",      desc: "정기 오프라인 밋업과 온라인 세션 운영." }
-        ]
+          { title: "Anthropic Claude 크레딧", value: "AI 인프라",   desc: "Tier 4 등급 Claude 기반 에이전틱 워크플로우 구축 지원" },
+          { title: "GCP (Gemini)",          value: "AI 인프라",     desc: "Gemini API 가용 크레딧 지원" },
+          { title: "Microsoft Azure",       value: "AI 인프라",     desc: "Azure 크레딧 지원, Azure 엔지니어와의 1:1 세션 지원" },
+          { title: "AI 창업자 커뮤니티",     value: "네트워크",      desc: "커뮤니티형 세션 및 오프라인 밋업 개최" }
+        ],
+        note: "기업별 기존 사용량에 따라 팀별 제공 크레딧의 총량은 달라질 수 있습니다."
       },
       process: {
         label: "03 — How It Works",
         title: "선발은 네 단계로 진행됩니다.",
-        sub: "이번 심사에서 투자로 이어지지 않아도, 스파크랩과의 인연은 이어집니다.",
+        sub: "이번 심사에서 투자로 이어지지 않아도, Spark Claw 커뮤니티와의 인연은 이어집니다.",
         steps: [
-          { title: "온라인 신청",    desc: "스파크랩 공식 홈페이지를 통해 지원서를 제출합니다." },
-          { title: "서류 스크리닝",  desc: "AI를 ‘팀원’처럼 운용한 방식을 중심으로 평가합니다." },
-          { title: "집중 부트캠프",  desc: "스파크랩 파트너들과 함께하는 몰입형 부트캠프." },
-          { title: "최종 투자 심사", desc: "통과 시 초기 투자 및 포트폴리오 혜택 제공." }
+          { title: "온라인 신청",    desc: "1) 홈페이지 하단 사전 알림받기 신청  2) Spark Claw 지원서 오픈시 작성 및 제출." },
+          { title: "서류 스크리닝",  desc: "학력 및 경력 무관, AI를 ‘팀원’처럼 운용한 방식을 중심으로 평가." },
+          { title: "집중 부트캠프",  desc: "Spark Claw 크레딧 제공, 스파크랩 파트너들과 함께하는 몰입형 부트캠프 진행." },
+          { title: "최종 투자 심사", desc: "통과 시 초기 투자 및 스파크랩 포트폴리오사 동일 혜택 제공." }
         ],
         note: "투자로 이어지지 않은 창업가는 Stage 2 · Stage 3 풀로 분류되어 후속 배치 우선 지원 자격과 커뮤니티 멤버십이 유지됩니다."
       },
@@ -1392,17 +1454,19 @@ html[lang="en"] .hero__title { letter-spacing: -0.04em; }
         title: "자주 묻는 질문",
         items: [
           { q: "공동창업자 없이도 정말 지원할 수 있나요?",
-            a: "네. Spark Claw는 1인 창업자를 위한 프로그램입니다. 팀이 없다는 것은 결격 사유가 아니라 프로그램의 전제입니다. AI 에이전트를 팀원처럼 설계하고 운용한 기록이 가장 중요한 평가 지표입니다." },
+            a: "네, Spark Claw는 1인 창업가 혹은 소규모 팀을 위한 프로그램입니다. 팀이 없다는 것은 결격 사유가 아니라 프로그램의 전제입니다. AI 에이전트를 팀원처럼 설계하고 운용한 기록이 가장 중요한 평가 지표입니다." },
           { q: "아이디어 단계에서도 지원이 가능한가요?",
-            a: "가능합니다. 제품 완성도보다 ‘AI를 팀원처럼 활용한 맥락’을 중점적으로 평가합니다. MVP가 없다면, 어떤 에이전트 / 워크플로우를 구축해왔는지 구체적으로 기술해주세요." },
+            a: "가능합니다. 제품 완성도보다 ‘AI를 팀원처럼 활용한 맥락’을 중점적으로 평가합니다. MVP가 없다면 추후 지원서를 통해 어떤 에이전트 / 워크플로우를 구축해왔는지 구체적으로 기술해주세요." },
           { q: "이번에 투자로 이어지지 않으면 어떻게 되나요?",
             a: "Stage 2 · Stage 3 풀로 분류되어 후속 배치 프로그램 우선 지원 자격과 커뮤니티 멤버십이 유지됩니다. 한 번의 심사로 인연이 끊기지 않도록 설계되어 있습니다." },
           { q: "온라인 중심인가요, 오프라인 모임도 있나요?",
-            a: "온라인 세션을 중심으로 운영하되, AI 창업가 커뮤니티 형성을 위한 정기 오프라인 밋업을 병행합니다." },
+            a: "Spark Claw 프로그램은 온라인/오프라인의 다양한 워크샵과 강의 및 세션으로 이루어져 있습니다. 또한, AI 창업가 커뮤니티 형성을 위한 정기 오프라인 밋업을 진행할 예정입니다." },
           { q: "해외 창업가도 지원할 수 있나요?",
             a: "한국 시장 진출 또는 한국 기반 창업 계획이 있다면 지원 가능합니다. 세부 자격 요건은 1기 모집 공고를 통해 공개됩니다." },
           { q: "1기 모집 일정은 언제 공개되나요?",
-            a: "세부 일정과 지원 자격은 순차적으로 공개됩니다. 이메일 알림을 등록해두시면 가장 먼저 안내드립니다." }
+            a: "1기 모집에 대한 상세 일정은 순차적으로 공개될 예정입니다.<br>홈페이지 우측 상단의 ‘알림받기’를 통해 사전 알림을 신청해주시면, 관련 소식을 가장 먼저 안내드리겠습니다." },
+          { q: "Spark Claw의 OpenAI / Anthropic / Gemini / MS Azure 크레딧은 언제 제공되나요?",
+            a: "심사 과정을 통과하여 부트캠프에 참여하는 팀들부터 제공됩니다." }
         ]
       },
       notify: {
@@ -1436,12 +1500,12 @@ html[lang="en"] .hero__title { letter-spacing: -0.04em; }
       hero: {
         eyebrow: "SparkLabs · Cohort 01 · Pre-launch",
         title: { line1: "AI is", line2: " your team", line3: "." },
-        sub: "Spark Claw is SparkLabs' first program built for solo founders in the age of Agentic AI. With AI as your co-builder, you're never alone.",
+        sub: "Spark Claw is SparkLabs' first program built for solo founders and small teams in the age of Agentic AI.",
         ctaPrimary: "Get notified for Cohort 01",
         ctaSecondary: "Read our thesis →",
         stat1: { label: "Initial investment", value: "KRW 50M – 100M" },
-        stat2: { label: "Who we back",        value: "Solo AI founders" },
-        stat3: { label: "Format",             value: "Online-first, offline meetups" }
+        stat2: { label: "Who we back",        value: "Solo & small-team AI founders" },
+        stat3: { label: "Format",             value: "Office hours (online & offline) + group sessions (workshops & lectures) + AI community meetups" }
       },
       philosophy: {
         label: "01 — Philosophy",
@@ -1454,6 +1518,14 @@ html[lang="en"] .hero__title { letter-spacing: -0.04em; }
         body: {
           p1: "Agentic AI now ships product, writes code, runs marketing, and handles customer ops. Spark Claw backs founders who treat AI not as a tool, but as a teammate.",
           p2: "Spark Claw doesn't stop at backing AI-native founders one by one. We bring them together to build <em class=\"accent\">Korea's strongest community of AI-native founders</em> — because for a solo operator, peers are the most powerful form of leverage."
+        },
+        quote2: {
+          part1: "Ideas don't change the world — execution does.",
+          part2: "We back the builders who prove it through what they ship."
+        },
+        body2: {
+          p1: "AI has rapidly torn down the walls around research and development. We're now in an era where anyone can turn an idea into something real.",
+          p2: "We pay attention to builders — those who choose execution over ideas, and outcomes over outlines."
         }
       },
       benefits: {
@@ -1461,23 +1533,24 @@ html[lang="en"] .hero__title { letter-spacing: -0.04em; }
         title: "The essentials — from day one.",
         sub: "Every benefit our portfolio companies receive — plus a stack purpose-built for AI-native teams.",
         items: [
-          { title: "Seed investment",           value: "KRW 50M – 100M", desc: "Initial check for founders who complete the intensive bootcamp." },
+          { title: "Seed investment",           value: "KRW 50M – 100M",   desc: "Initial check for founders who complete the intensive bootcamp." },
           { title: "OpenAI API credits",        value: "AI infrastructure", desc: "Credits to build on GPT models and agent tooling." },
-          { title: "Anthropic Claude credits",  value: "AI infrastructure", desc: "Support for building Claude-powered agentic workflows." },
-          { title: "AWS startup perks",         value: "Cloud",           desc: "Discounts through the AWS startup program." },
-          { title: "Global SaaS stack",         value: "Operations",      desc: "The essential tooling for an AI-native company — bundled." },
-          { title: "AI founders community",     value: "Network",         desc: "Regular offline meetups and a working online cohort." }
-        ]
+          { title: "Anthropic Claude credits",  value: "AI infrastructure", desc: "Tier 4 access to Claude for building agentic workflows." },
+          { title: "GCP (Gemini)",              value: "AI infrastructure", desc: "Gemini API credits." },
+          { title: "Microsoft Azure",           value: "AI infrastructure", desc: "Azure credits plus 1:1 sessions with Azure engineers." },
+          { title: "AI founders community",     value: "Network",           desc: "Community-format sessions and offline meetups." }
+        ],
+        note: "Total credits provided per team may vary based on each provider's existing usage policies."
       },
       process: {
         label: "03 — How it works",
         title: "Four steps, one clear path.",
-        sub: "Not funded this round? Your relationship with SparkLabs doesn't end there.",
+        sub: "Not funded this round? Your relationship with the Spark Claw community doesn't end there.",
         steps: [
-          { title: "Online application", desc: "Submit your application through the SparkLabs site." },
-          { title: "Screening",          desc: "We review how you've built with AI as a teammate — not just a tool." },
-          { title: "Intensive bootcamp", desc: "A focused sprint alongside SparkLabs partners." },
-          { title: "Investment decision", desc: "Founders who advance receive the initial check and full portfolio benefits." }
+          { title: "Online application", desc: "1) Sign up for early notice at the bottom of this page. 2) Submit your application when Cohort 01 opens." },
+          { title: "Screening",          desc: "Background and credentials don't matter. We focus on how you've operated AI as a teammate." },
+          { title: "Intensive bootcamp", desc: "Spark Claw credits provided. A focused bootcamp alongside SparkLabs partners." },
+          { title: "Investment decision", desc: "Founders who advance receive the initial check and the same benefits given to every SparkLabs portfolio company." }
         ],
         note: "Founders who aren't funded this round join SparkLabs' Stage 2 or Stage 3 pool — with priority access to future cohorts and ongoing community membership."
       },
@@ -1502,17 +1575,19 @@ html[lang="en"] .hero__title { letter-spacing: -0.04em; }
         title: "Frequently asked",
         items: [
           { q: "Can I really apply without a co-founder?",
-            a: "Yes. Spark Claw is built specifically for solo founders. No traditional team isn't a gap — it's the premise. What we evaluate most closely is how you've designed and orchestrated AI agents as teammates." },
+            a: "Yes. Spark Claw is built for solo founders and small teams. Having no traditional team isn't a gap — it's the premise. What we evaluate most closely is how you've designed and orchestrated AI agents as teammates." },
           { q: "Can I apply at the idea stage?",
-            a: "Yes. We care less about product polish and more about how you've worked with AI as a teammate. If there's no MVP yet, show us the agents and workflows you've built along the way." },
+            a: "Yes. We care less about product polish and more about how you've worked with AI as a teammate. If there's no MVP yet, describe in your application the specific agents and workflows you've built." },
           { q: "What if I don't receive investment this round?",
             a: "You'll join our Stage 2 or Stage 3 pool, with priority access to future cohorts and ongoing community membership. A single decision never ends the relationship." },
           { q: "Is the program fully online?",
-            a: "Online-first, with regular offline meetups to build a working community of AI-native founders in Korea." },
+            a: "Spark Claw runs through a mix of online and offline workshops, lectures, and sessions. We also host regular offline meetups to build a working community of AI founders." },
           { q: "Can international founders apply?",
             a: "Yes — if you plan to build in or for the Korean market. Full eligibility will be published with the Cohort 01 announcement." },
           { q: "When will Cohort 01 timing be announced?",
-            a: "We'll share timing, eligibility, and application details in phases. Subscribe below and you'll hear first." }
+            a: "Detailed timing for Cohort 01 will be shared in stages.<br>Click ‘Notify me’ at the top right of this page and you'll hear about every update first." },
+          { q: "When are Spark Claw's OpenAI / Anthropic / Gemini / MS Azure credits provided?",
+            a: "Credits are provided to teams that pass the screening and join the bootcamp." }
         ]
       },
       notify: {
