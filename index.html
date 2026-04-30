@@ -1302,14 +1302,17 @@ html[lang="en"] .hero__title { letter-spacing: -0.04em; }
 
           <div class="notify__form-panel">
             <iframe
+              id="tally-form"
               data-tally-src="https://tally.so/embed/zx0dx1?alignLeft=1&amp;hideTitle=1&amp;transparentBackground=1&amp;dynamicHeight=1"
+              data-src-ko="https://tally.so/embed/zx0dx1?alignLeft=1&amp;hideTitle=1&amp;transparentBackground=1&amp;dynamicHeight=1"
+              data-src-en="https://tally.so/embed/68rJNA?alignLeft=1&amp;hideTitle=1&amp;transparentBackground=1&amp;dynamicHeight=1"
               loading="lazy"
               width="100%"
               height="640"
               frameborder="0"
               marginheight="0"
               marginwidth="0"
-              title="Spark Claw Cohort 01 사전 신청"></iframe>
+              title="Spark Claw Cohort 01 Application"></iframe>
           </div>
         </div>
       </div>
@@ -1636,6 +1639,23 @@ html[lang="en"] .hero__title { letter-spacing: -0.04em; }
     document.querySelectorAll('.lang-btn').forEach(btn => {
       btn.setAttribute('aria-pressed', String(btn.dataset.lang === lang));
     });
+
+    // Switch Tally form to matching language
+    const tallyFrame = document.getElementById('tally-form');
+    if (tallyFrame) {
+      const koSrc = tallyFrame.dataset.srcKo || tallyFrame.getAttribute('data-tally-src');
+      const enSrc = tallyFrame.dataset.srcEn;
+      const targetSrc = lang === 'en' ? enSrc : koSrc;
+      if (targetSrc) {
+        // If Tally widget has already replaced data-tally-src with a real src, swap src directly.
+        // Otherwise update data-tally-src so the widget picks up the right URL on first load.
+        if (tallyFrame.src && tallyFrame.src.indexOf('tally.so') > -1) {
+          if (tallyFrame.src !== targetSrc) tallyFrame.src = targetSrc;
+        } else {
+          tallyFrame.setAttribute('data-tally-src', targetSrc);
+        }
+      }
+    }
 
     // persist
     try { localStorage.setItem('sparkclaw.lang', lang); } catch (_) {}
