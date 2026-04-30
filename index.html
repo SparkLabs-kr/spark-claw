@@ -469,6 +469,15 @@ html[lang="en"] .hero__title { letter-spacing: -0.04em; }
   color: var(--ink-soft);
   font-size: clamp(15px, 1.2vw, 17px);
 }
+.section__tagline {
+  font-family: var(--font-display);
+  font-size: clamp(18px, 2vw, 24px);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+  color: var(--ink-soft);
+  margin: -4px 0 18px;
+}
 
 /* =========================
    Philosophy
@@ -1078,7 +1087,8 @@ html[lang="en"] .hero__title { letter-spacing: -0.04em; }
       <div class="container">
         <div class="section__head">
           <span class="section__label is-yellow" data-i18n="benefits.label">02 — What You Get</span>
-          <h2 class="section__title" data-i18n="benefits.title">창업 초기, 가장 필요한 것부터.</h2>
+          <h2 class="section__title" data-i18n="benefits.title">SparkClaw AI-Native Builder Stack</h2>
+          <p class="section__tagline" data-i18n="benefits.tagline">창업 초기, 가장 필요한 것부터.</p>
           <p class="section__sub" data-i18n="benefits.sub">스파크랩 포트폴리오사에게 제공되는 동일한 혜택과 더불어, AI 기업에 특화된 현금 가치 <strong class="accent">5억원 상당</strong>의 혜택을 제공합니다.</p>
         </div>
 
@@ -1406,7 +1416,8 @@ html[lang="en"] .hero__title { letter-spacing: -0.04em; }
       },
       benefits: {
         label: "02 — What You Get",
-        title: "창업 초기, 가장 필요한 것부터.",
+        title: "SparkClaw AI-Native Builder Stack",
+        tagline: "창업 초기, 가장 필요한 것부터.",
         sub: "스파크랩 포트폴리오사에게 제공되는 동일한 혜택과 더불어, AI 기업에 특화된 현금 가치 <strong class=\"accent\">5억원 상당</strong>의 혜택을 제공합니다.",
         items: [
           { title: "초기 투자",             value: "5천만 원 ~ 2억 원 <span class=\"tips-note\">(TIPS 프로그램 연계)</span>",  desc: "집중 부트캠프를 통과한 창업가 대상 초기 투자." },
@@ -1520,7 +1531,8 @@ html[lang="en"] .hero__title { letter-spacing: -0.04em; }
       },
       benefits: {
         label: "02 — What you get",
-        title: "The essentials — from day one.",
+        title: "SparkClaw AI-Native Builder Stack",
+        tagline: "The essentials — from day one.",
         sub: "Every benefit our portfolio companies receive — plus an AI-native stack worth <strong class=\"accent\">approximately ₩500M</strong> in cash value.",
         items: [
           { title: "Seed investment",           value: "KRW 50M – 200M <span class=\"tips-note\">(via TIPS program)</span>",   desc: "Initial check for founders who complete the intensive bootcamp." },
