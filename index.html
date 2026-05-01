@@ -519,9 +519,106 @@ html[lang="en"] .hero__title { letter-spacing: -0.04em; }
   .philosophy__divider { margin: 56px 0 40px; }
 }
 
+/* Full-width "more partners joining" callout below grid */
+.benefits__more {
+  margin-top: 24px;
+  padding: 22px 28px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+.benefits__more-spark {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+.benefits__more-spark span {
+  display: inline-block;
+  width: 5px;
+  height: 30px;
+  border-radius: 2px;
+}
+.benefits__more-spark span:nth-child(1) { background: var(--spark-yellow); }
+.benefits__more-spark span:nth-child(2) { background: var(--spark-green);  }
+.benefits__more-spark span:nth-child(3) { background: var(--spark-pink);   }
+.benefits__more-spark span:nth-child(4) { background: var(--spark-blue);   }
+.benefits__more-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+.benefits__more-headline {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(16px, 1.5vw, 19px);
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+}
+.benefits__more-sub {
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(13px, 1vw, 14px);
+}
+
+@media (max-width: 560px) {
+  .benefits__more { padding: 18px 20px; gap: 16px; flex-wrap: wrap; }
+  .benefits__more-spark span { height: 24px; }
+}
+
+/* Partner inquiry CTA — sits below the "more partners joining" banner */
+.benefits__partner {
+  margin-top: 16px;
+  padding: 26px 32px;
+  background: var(--bg-alt);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.benefits__partner-text {
+  flex: 1;
+  min-width: 0;
+}
+.benefits__partner-text h3 {
+  margin: 0 0 4px;
+  font-family: var(--font-display);
+  font-size: clamp(15px, 1.4vw, 18px);
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+}
+.benefits__partner-text p {
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(13px, 1vw, 14px);
+}
+.benefits__partner-cta {
+  flex-shrink: 0;
+  font-size: 14px;
+  padding: 12px 22px;
+}
+
+@media (max-width: 640px) {
+  .benefits__partner {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    padding: 22px 20px;
+    gap: 14px;
+  }
+  .benefits__partner-cta { width: 100%; justify-content: center; }
+}
+
 /* Benefits disclaimer note (under cards) */
 .benefits__note {
-  margin: 24px 0 0;
+  margin: 16px 0 0;
   padding: 0;
   color: var(--muted);
   font-size: 13px;
@@ -1131,6 +1228,26 @@ html[lang="en"] .hero__title { letter-spacing: -0.04em; }
           </li>
         </ul>
 
+        <div class="benefits__more">
+          <span class="benefits__more-spark" aria-hidden="true">
+            <span></span><span></span><span></span><span></span>
+          </span>
+          <div class="benefits__more-text">
+            <p class="benefits__more-headline" data-i18n="benefits.more.headline">더 많은 글로벌 AI 파트너사가 합류 중입니다.</p>
+            <p class="benefits__more-sub" data-i18n="benefits.more.sub">Builder Stack은 매월 확장됩니다.</p>
+          </div>
+        </div>
+
+        <div class="benefits__partner">
+          <div class="benefits__partner-text">
+            <h3 data-i18n="benefits.partner.title">Spark Claw 파트너로 합류하고 싶으신가요?</h3>
+            <p data-i18n="benefits.partner.sub">AI 인프라·SaaS·서비스 분야 파트너십을 환영합니다.</p>
+          </div>
+          <a class="btn btn--primary benefits__partner-cta"
+             href="mailto:info@sparklabs.co.kr?subject=%5BSpark%20Claw%5D%20%ED%8C%8C%ED%8A%B8%EB%84%88%EC%8B%AD%20%EB%AC%B8%EC%9D%98"
+             data-i18n="benefits.partner.cta">파트너 문의하기 →</a>
+        </div>
+
         <p class="benefits__note" data-i18n="benefits.note">기업별 기존 사용량에 따라 팀별 제공 크레딧의 총량은 달라질 수 있습니다.</p>
       </div>
     </section>
@@ -1427,6 +1544,15 @@ html[lang="en"] .hero__title { letter-spacing: -0.04em; }
           { title: "Microsoft Azure",       value: "AI 인프라",     desc: "Azure 크레딧 지원, Azure 엔지니어와의 1:1 세션 지원" },
           { title: "AI 창업자 커뮤니티",     value: "네트워크",      desc: "커뮤니티형 세션 및 오프라인 밋업 개최" }
         ],
+        more: {
+          headline: "더 많은 글로벌 AI 파트너사가 합류 중입니다.",
+          sub: "Builder Stack은 매월 확장됩니다."
+        },
+        partner: {
+          title: "Spark Claw 파트너로 합류하고 싶으신가요?",
+          sub: "AI 인프라·SaaS·서비스 분야 파트너십을 환영합니다.",
+          cta: "파트너 문의하기 →"
+        },
         note: "기업별 기존 사용량에 따라 팀별 제공 크레딧의 총량은 달라질 수 있습니다."
       },
       process: {
@@ -1542,6 +1668,15 @@ html[lang="en"] .hero__title { letter-spacing: -0.04em; }
           { title: "Microsoft Azure",           value: "AI infrastructure", desc: "Azure credits plus 1:1 sessions with Azure engineers." },
           { title: "AI founders community",     value: "Network",           desc: "Community-format sessions and offline meetups." }
         ],
+        more: {
+          headline: "More AI partners are joining the stack.",
+          sub: "The Builder Stack keeps growing — every month."
+        },
+        partner: {
+          title: "Want to join the Builder Stack?",
+          sub: "We welcome AI infrastructure, SaaS, and service partnerships.",
+          cta: "Become a partner →"
+        },
         note: "Total credits provided per team may vary based on each provider's existing usage policies."
       },
       process: {
