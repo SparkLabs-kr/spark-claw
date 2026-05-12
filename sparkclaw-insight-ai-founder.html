@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI가 팀원인 시대, 그래도 변하지 않는 것 — Jimmy Kim | SparkClaw Insights</title>
+  <meta name="description" content="AI 시대에도 변하지 않는 창업의 본질. SparkLabs Co-Founder 김호민(Jimmy Kim)의 1인 AI 네이티브 창업자를 위한 기고문." />
+  <meta name="author" content="김호민 (Jimmy Kim)" />
+  <meta property="og:title" content="AI가 팀원인 시대, 그래도 변하지 않는 것" />
+  <meta property="og:description" content="AI 시대에도 변하지 않는 창업의 본질. SparkLabs Co-Founder 김호민(Jimmy Kim)의 1인 AI 네이티브 창업자를 위한 기고문." />
+  <meta property="og:type" content="article" />
+  <meta property="article:author" content="김호민 (Jimmy Kim)" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+      background: #FAFAF8;
+      color: #1a1a18;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 4rem 2rem 6rem;
+    }
+
+    /* Header */
+    .eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #BA7517;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: clamp(24px, 4vw, 32px);
+      font-weight: 700;
+      line-height: 1.3;
+      color: #111110;
+      margin-bottom: 1.25rem;
+      word-break: keep-all;
+    }
+
+    /* Tags */
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 1.5rem;
+    }
+    .tag {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 11px;
+      border-radius: 20px;
+      background: #FEF3E2;
+      color: #854F0B;
+      border: 1px solid #FAC775;
+      letter-spacing: 0.02em;
+    }
+
+    /* Byline */
+    .byline-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 1.25rem 0;
+      border-top: 1px solid #E8E6DF;
+      border-bottom: 1px solid #E8E6DF;
+      margin-bottom: 2.5rem;
+    }
+    .avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #FEF3E2;
+      border: 1px solid #FAC775;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+      color: #BA7517;
+      flex-shrink: 0;
+    }
+    .byline-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: #111110;
+      margin-bottom: 2px;
+    }
+    .byline-meta {
+      font-size: 12px;
+      color: #888780;
+    }
+
+    /* Body */
+    .article-body {
+      font-size: 16.5px;
+      line-height: 1.9;
+      color: #2c2c2a;
+      word-break: keep-all;
+    }
+    .article-body p {
+      margin-bottom: 1.5rem;
+    }
+
+    /* Pull quote */
+    .pull-quote {
+      margin: 2.25rem 0;
+      padding: 1.5rem 1.75rem;
+      background: #FEF3E2;
+      border-left: 4px solid #EF9F27;
+      border-radius: 0 8px 8px 0;
+    }
+    .pull-quote p {
+      margin: 0;
+      font-size: 17px;
+      font-weight: 600;
+      line-height: 1.65;
+      color: #7A4A0A;
+      word-break: keep-all;
+    }
+
+    /* Divider */
+    hr {
+      border: none;
+      border-top: 1px solid #E8E6DF;
+      margin: 3rem 0 2.25rem;
+    }
+
+    /* Author card */
+    .author-card {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      background: #F4F2EB;
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+    }
+    .author-avatar-lg {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: #FEF3E2;
+      border: 1px solid #FAC775;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+      color: #BA7517;
+      flex-shrink: 0;
+    }
+    .author-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: #111110;
+      margin-bottom: 5px;
+    }
+    .author-bio {
+      font-size: 13px;
+      color: #5F5E5A;
+      line-height: 1.65;
+      margin-bottom: 8px;
+      word-break: keep-all;
+    }
+    .author-link {
+      font-size: 13px;
+      color: #BA7517;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .author-link:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      .page-wrap { padding: 2.5rem 1.25rem 4rem; }
+      .pull-quote { padding: 1.25rem 1.25rem; }
+      .author-card { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <article class="page-wrap">
+
+    <p class="eyebrow">SparkClaw Insights &middot; 2026</p>
+
+    <h1>AI가 팀원인 시대,<br>그래도 변하지 않는 것</h1>
+
+    <div class="tag-row">
+      <span class="tag">#1인창업</span>
+      <span class="tag">#AI네이티브</span>
+      <span class="tag">#창업본질</span>
+      <span class="tag">#SparkClaw</span>
+    </div>
+
+    <div class="byline-row">
+      <div class="avatar">JK</div>
+      <div>
+        <div class="byline-name">김호민 (Jimmy Kim)</div>
+        <div class="byline-meta">Co-Founder &amp; General Partner, SparkLabs Korea</div>
+      </div>
+    </div>
+
+    <div class="article-body">
+
+      <p>요즘 SparkLabs 사무실을 찾아오는 창업자들의 모습이 달라졌습니다. 몇 년 전만 해도 "공동창업자를 어떻게 구하나요?"가 첫 번째 질문이었다면, 요즘은 혼자서 AI로 MVP를 직접 만들어 들고 오는 분들이 부쩍 늘었어요. Cursor로 코딩하고, Claude로 기획서 쓰고, ChatGPT로 고객 이메일을 초안 잡습니다. AI가 있으면 1인이 10인의 일을 해낼 수 있는 시대가 열린 겁니다.</p>
+
+      <p>저는 이 변화를 진심으로 흥분된 눈으로 봅니다. SparkLabs를 공동창업할 때 우리가 꿈꾸던 건 결국 '더 적은 자원으로 더 큰 임팩트'였어요. 그 꿈이 이제 1인 창업자에게도 현실이 됐습니다. Matthew Gallager처럼 AI만으로 2년 만에 3조 원 매출을 만든 사람도 있고, Maor Shlomo처럼 혼자 만든 서비스가 6개월 만에 Wix에 인수된 케이스도 있어요. 그래서 저희도 올해 1인 AI 네이티브 창업자를 위한 스파크클로(SparkClaw) 프로그램을 시작했습니다.</p>
+
+      <p>그런데 저는 요즘 이런 빌더분들을 만나면 꼭 한 가지 질문을 드립니다.</p>
+
+      <div class="pull-quote">
+        <p>"MVP 시연에 30분, 기술 설명에 20분. 그런데 막상 '왜 당신이어야 하나요?'를 물으면 말문이 막히는 경우가 생각보다 많습니다. AI가 코드를 짜주는 시대에 가장 희귀한 자원은 결국 사람의 WHY입니다."</p>
+      </div>
+
+      <p>400개 이상의 포트폴리오 회사를 보면서 저는 한 가지 패턴을 반복해서 목격했어요. 살아남는 창업자와 그렇지 못한 창업자의 차이는 기술력도, 자금도, 팀 규모도 아니었습니다. 반드시 온다는 걸 알고 있는 위기의 순간에 버티게 만드는 힘이 있느냐 없느냐였어요. 그 힘은 사명(Mission)에서 옵니다. 솔직히 말씀드리면, 돈을 벌기 위해 창업한 사람이 끝까지 살아남는 경우는 거의 보지 못했습니다.</p>
+
+      <p>mRNA 백신 기술을 기억하세요? 수십 년 동안 시장의 외면을 받았지만, 그 기술을 믿고 버텼던 사람들이 있었습니다. 코로나라는 외부 충격이 왔을 때 세상을 구한 건 그 '버틴 사람들'이었어요. AI 도구가 아무리 강력해도, 시장이 열리는 타이밍까지 버티게 해주는 건 결국 여러분의 WHY입니다.</p>
+
+      <p>AI가 팀원인 시대에 1인 창업자에게 필요한 건 새로운 기술 스택이 아닙니다. 아무도 없는 방에서 스스로에게 솔직하게 던질 수 있는 질문 하나면 충분합니다.</p>
+
+      <div class="pull-quote">
+        <p>"나는 왜 이 일을 하고 싶은가? — 그 답이 명확한 창업자만이 AI를 진짜 무기로 쓸 수 있습니다."</p>
+      </div>
+
+    </div>
+
+    <hr />
+
+    <div class="author-card">
+      <div class="author-avatar-lg">JK</div>
+      <div>
+        <div class="author-name">김호민 (Jimmy Kim)</div>
+        <div class="author-bio">SparkLabs Korea Co-Founder &amp; General Partner. 전 Nexon Group CEO, Studio Ex → Disney 인수. 400개+ 포트폴리오, 누적 투자유치 1조 9천억 원. 1인 AI 네이티브 창업자를 위한 스파크클로(SparkClaw) 운영 중.</div>
+        <a class="author-link" href="https://www.sparkclaw.co.kr">스파크클로 바로가기 → sparkclaw.co.kr</a>
+      </div>
+    </div>
+
+  </article>
+</body>
+</html>

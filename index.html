@@ -1210,6 +1210,7 @@ html[lang="en"] .hero__title { letter-spacing: -0.04em; }
         <a href="#process" data-i18n="nav.process">Process</a>
         <a href="#about" data-i18n="nav.about">About</a>
         <a href="#news" data-i18n="nav.news">News</a>
+        <a href="/insights" data-i18n="nav.insights">Insights</a>
         <a href="#faq" data-i18n="nav.faq">FAQ</a>
       </nav>
 
@@ -1664,7 +1665,7 @@ html[lang="en"] .hero__title { letter-spacing: -0.04em; }
         description: "스파크랩이 제안하는 에이전틱 AI 시대의 1인 창업자 전문 액셀러레이팅 프로그램. AI가 당신의 팀입니다."
       },
       nav: {
-        philosophy: "철학", benefits: "혜택", process: "프로세스", about: "스파크랩", news: "뉴스", faq: "FAQ",
+        philosophy: "철학", benefits: "혜택", process: "프로세스", about: "스파크랩", news: "뉴스", insights: "인사이트", faq: "FAQ",
         cta: "사전 신청"
       },
       hero: {
@@ -1800,7 +1801,7 @@ html[lang="en"] .hero__title { letter-spacing: -0.04em; }
         description: "SparkLabs' first accelerator program purpose-built for solo founders in the era of Agentic AI. AI is your team."
       },
       nav: {
-        philosophy: "Philosophy", benefits: "Benefits", process: "Process", about: "About", news: "News", faq: "FAQ",
+        philosophy: "Philosophy", benefits: "Benefits", process: "Process", about: "About", news: "News", insights: "Insights", faq: "FAQ",
         cta: "Apply now"
       },
       hero: {
@@ -2324,12 +2325,7 @@ html[lang="en"] .hero__title { letter-spacing: -0.04em; }
     initLangToggle();
     initFaq();
     initNav();
-    initNotifyForm();
-    stampYear();
-    initNews();
-  });
-})();
-
+    initNotifyForm(
   </script>
   <script async src="https://tally.so/widgets/embed.js"></script>
   <!-- Vercel Web Analytics (static HTML mode) -->
@@ -2346,10 +2342,4 @@ html[lang="en"] .hero__title { letter-spacing: -0.04em; }
             event_category: 'conversion',
             event_label: 'Spark Claw Cohort 01 Pre-application',
             value: 1
-          });
-        }
-      }
-    });
-  </script>
-</body>
-</html>
+  

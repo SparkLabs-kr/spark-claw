@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#FAFAF8" />
+
+  <title>Insights — Spark Claw</title>
+  <meta name="description" content="1인 AI 네이티브 창업자를 위한 SparkLabs 김호민(Jimmy Kim)의 통찰. AI가 팀원인 시대, 창업의 본질을 다시 묻다." />
+
+  <meta property="og:title" content="Spark Claw Insights" />
+  <meta property="og:description" content="1인 AI 네이티브 창업자를 위한 SparkLabs 김호민의 통찰." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sparkclaw.sparklabs.co.kr/insights" />
+
+  <link rel="icon" type="image/png" href="assets/favicon-192.png" />
+  <link rel="apple-touch-icon" href="assets/favicon-192.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      font-family: "Pretendard Variable", "Apple SD Gothic Neo", "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: #FAFAF8;
+      color: #1a1a18;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    html[lang="en"] body { font-family: "Inter", "Pretendard Variable", system-ui, sans-serif; }
+    img, svg { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ===========
+       Top nav
+       =========== */
+    .nav {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(250, 250, 248, 0.85);
+      backdrop-filter: saturate(180%) blur(12px);
+      -webkit-backdrop-filter: saturate(180%) blur(12px);
+      border-bottom: 1px solid #E8E6DF;
+    }
+    .nav__inner {
+      max-width: 1100px; margin: 0 auto;
+      padding: 14px 28px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 24px;
+    }
+    .nav__brand {
+      display: inline-flex; align-items: center; gap: 10px;
+      color: #111110; font-weight: 700;
+    }
+    .nav__brand img { width: 32px; height: 32px; }
+    .nav__wordmark {
+      font-family: "Space Grotesk", "Pretendard Variable", sans-serif;
+      font-size: 16px; letter-spacing: 0.04em; font-weight: 700;
+    }
+    .nav__links { display: flex; gap: 24px; align-items: center; }
+    .nav__links a {
+      font-size: 14px; font-weight: 500; color: #5F5E5A;
+      transition: color 0.18s ease;
+    }
+    .nav__links a:hover { color: #BA7517; }
+    .nav__links a.is-active { color: #BA7517; font-weight: 600; }
+    .nav__cta {
+      display: inline-flex; align-items: center;
+      padding: 8px 16px; border-radius: 999px;
+      background: #111110; color: #FAFAF8;
+      font-size: 13px; font-weight: 600;
+      transition: background 0.18s ease;
+    }
+    .nav__cta:hover { background: #BA7517; }
+
+    @media (max-width: 720px) {
+      .nav__inner { padding: 12px 20px; gap: 14px; }
+      .nav__links { display: none; }
+    }
+
+    /* ===========
+       Page
+       =========== */
+    .page {
+      max-width: 1100px; margin: 0 auto;
+      padding: 72px 28px 96px;
+    }
+    @media (max-width: 720px) {
+      .page { padding: 48px 20px 72px; }
+    }
+
+    /* Hero */
+    .insights-hero { margin-bottom: 64px; max-width: 720px; }
+    .eyebrow {
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: #BA7517; margin-bottom: 14px;
+    }
+    .insights-hero h1 {
+      font-family: "Space Grotesk", "Pretendard Variable", sans-serif;
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 700; letter-spacing: -0.02em; line-height: 1.1;
+      color: #111110;
+      margin: 0 0 18px;
+      word-break: keep-all;
+    }
+    .insights-hero p {
+      font-size: clamp(15px, 1.4vw, 17px);
+      color: #5F5E5A; margin: 0;
+      word-break: keep-all;
+    }
+
+    /* Grid */
+    .insights-grid {
+      list-style: none; padding: 0; margin: 0;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+    @media (max-width: 720px) {
+      .insights-grid { grid-template-columns: 1fr; gap: 16px; }
+    }
+
+    .insight-card {
+      background: #FFFFFF;
+      border: 1px solid #E8E6DF;
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform 0.25s cubic-bezier(.2,.7,.2,1),
+                  border-color 0.25s ease,
+                  box-shadow 0.25s ease;
+    }
+    .insight-card:hover {
+      transform: translateY(-3px);
+      border-color: #FAC775;
+      box-shadow: 0 18px 40px -22px rgba(186, 117, 23, 0.28);
+    }
+    .insight-card__link {
+      display: flex; flex-direction: column;
+      height: 100%;
+      padding: 28px 28px 24px;
+      color: inherit;
+    }
+    @media (max-width: 720px) {
+      .insight-card__link { padding: 22px 22px 20px; }
+    }
+
+    .insight-card__meta {
+      font-size: 12px;
+      color: #888780;
+      letter-spacing: 0.02em;
+      margin-bottom: 14px;
+    }
+    .insight-card__meta strong { color: #BA7517; font-weight: 600; }
+
+    .insight-card__title {
+      font-family: "Space Grotesk", "Pretendard Variable", sans-serif;
+      font-size: clamp(20px, 2vw, 24px);
+      font-weight: 700; letter-spacing: -0.01em;
+      line-height: 1.3;
+      color: #111110;
+      margin: 0 0 14px;
+      word-break: keep-all;
+    }
+    .insight-card:hover .insight-card__title { color: #BA7517; }
+
+    .insight-card__excerpt {
+      font-size: 15px;
+      line-height: 1.65;
+      color: #5F5E5A;
+      margin: 0 0 20px;
+      word-break: keep-all;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .insight-card__tags {
+      display: flex; flex-wrap: wrap; gap: 6px;
+      margin-bottom: 22px;
+    }
+    .insight-card__tag {
+      font-size: 11px; font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: #FEF3E2;
+      color: #854F0B;
+      border: 1px solid #FAC775;
+      letter-spacing: 0.02em;
+    }
+
+    .insight-card__cta {
+      margin-top: auto;
+      font-size: 13px; font-weight: 600;
+      color: #BA7517;
+      letter-spacing: 0.02em;
+      display: inline-flex; align-items: center; gap: 6px;
+    }
+    .insight-card__cta span { transition: transform 0.2s ease; display: inline-block; }
+    .insight-card:hover .insight-card__cta span { transform: translateX(3px); }
+
+    /* Author note */
+    .author-note {
+      margin-top: 64px;
+      padding: 24px 28px;
+      background: #F4F2EB;
+      border-radius: 16px;
+      display: flex; gap: 18px; align-items: flex-start;
+    }
+    .author-note__avatar {
+      width: 52px; height: 52px; border-radius: 50%;
+      background: #FEF3E2; border: 1px solid #FAC775;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; font-weight: 700; color: #BA7517;
+      flex-shrink: 0;
+    }
+    .author-note__name { font-size: 14px; font-weight: 700; color: #111110; margin-bottom: 5px; }
+    .author-note__bio { font-size: 13px; color: #5F5E5A; line-height: 1.65; word-break: keep-all; }
+    @media (max-width: 600px) {
+      .author-note { flex-direction: column; padding: 20px 22px; }
+    }
+
+    /* Footer */
+    .footer {
+      border-top: 1px solid #E8E6DF;
+      padding: 36px 28px;
+      text-align: center;
+      font-size: 13px; color: #888780;
+    }
+    .footer a {
+      color: #BA7517; font-weight: 600;
+    }
+    .footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <header class="nav">
+    <div class="nav__inner">
+      <a href="/" class="nav__brand" aria-label="Spark Claw home">
+        <img src="assets/mascot-sm.png" alt="" width="32" height="32" />
+        <span class="nav__wordmark">SPARK CLAW</span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="/#philosophy">Philosophy</a>
+        <a href="/#benefits">Benefits</a>
+        <a href="/#process">Process</a>
+        <a href="/#about">About</a>
+        <a href="/#news">News</a>
+        <a href="/insights" class="is-active">Insights</a>
+      </nav>
+      <a href="/#notify" class="nav__cta">사전 신청</a>
+    </div>
+  </header>
+
+  <main class="page">
+
+    <header class="insights-hero">
+      <p class="eyebrow">Spark Claw Insights · 2026</p>
+      <h1>창업의 본질, AI의 시대.</h1>
+      <p>1인 AI 네이티브 창업자를 위한 SparkLabs 김호민(Jimmy Kim)의 시선. 도구를 넘어 동료로, 기술을 넘어 본질로.</p>
+    </header>
+
+    <ul class="insights-grid">
+
+      <li class="insight-card">
+        <a class="insight-card__link" href="/sparkclaw-insight-ai-agent-teammate">
+          <p class="insight-card__meta">2026.05.10 · <strong>김호민 (Jimmy Kim)</strong></p>
+          <h2 class="insight-card__title">AI Agent를 팀원으로 쓴다는 것의 진짜 의미</h2>
+          <p class="insight-card__excerpt">
+            도구(Tool)로 쓰는 것과 프로세스에 통합(Integrate)하는 것은 완전히 다른 이야기다. 그 차이가 6개월 뒤 런웨이 2~3개월을 만든다. AI Agent로 대체 가능한 포지션을 처음부터 조직 설계에 반영하는 1인 창업자에 대하여.
+          </p>
+          <div class="insight-card__tags">
+            <span class="insight-card__tag">#AI에이전트</span>
+            <span class="insight-card__tag">#1인창업</span>
+            <span class="insight-card__tag">#BEP전략</span>
+          </div>
+          <span class="insight-card__cta">Read article <span>→</span></span>
+        </a>
+      </li>
+
+      <li class="insight-card">
+        <a class="insight-card__link" href="/sparkclaw-insight-ai-founder">
+          <p class="insight-card__meta">2026.04.25 · <strong>김호민 (Jimmy Kim)</strong></p>
+          <h2 class="insight-card__title">AI가 팀원인 시대, 그래도 변하지 않는 것</h2>
+          <p class="insight-card__excerpt">
+            400개 이상의 포트폴리오를 보면서 반복해서 목격한 패턴. 살아남는 창업자와 그렇지 못한 창업자를 가르는 건 기술도, 자금도, 팀 규모도 아니었다. AI가 코드를 짜주는 시대에 가장 희귀한 자원은 사람의 WHY다.
+          </p>
+          <div class="insight-card__tags">
+            <span class="insight-card__tag">#1인창업</span>
+            <span class="insight-card__tag">#AI네이티브</span>
+            <span class="insight-card__tag">#창업본질</span>
+          </div>
+          <span class="insight-card__cta">Read article <span>→</span></span>
+        </a>
+      </li>
+
+    </ul>
+
+    <aside class="author-note">
+      <div class="author-note__avatar">JK</div>
+      <div>
+        <div class="author-note__name">김호민 (Jimmy Kim)</div>
+        <div class="author-note__bio">
+          SparkLabs Korea Co-Founder &amp; General Partner. 전 Nexon Group CEO, Studio Ex → Disney 인수. 400개+ 포트폴리오, 누적 투자유치 1조 9천억 원. 1인 AI 네이티브 창업자를 위한 스파크클로(SparkClaw) 운영 중.
+        </div>
+      </div>
+    </aside>
+
+  </main>
+
+  <footer class="footer">
+    © 2026 SparkLabs.  <a href="/">SparkClaw 홈으로 ↗</a>
+  </footer>
+
+</body>
+</html>
