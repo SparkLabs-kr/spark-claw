@@ -2360,7 +2360,23 @@ html[lang="en"] .hero__title { letter-spacing: -0.04em; }
   }
 
   // ---- Year stamp --------------------------------------------------------
-  functi
+  function stampYear() {
+    const year = new Date().getFullYear();
+    document.querySelectorAll('[data-year]').forEach(el => { el.textContent = year; });
+  }
+
+  // ---- Boot --------------------------------------------------------------
+  document.addEventListener('DOMContentLoaded', () => {
+    initLangToggle();
+    initFaq();
+    initNav();
+    initNotifyForm();
+    stampYear();
+    initNews();
+    initInsights();
+  });
+})();
+
   </script>
   <script async src="https://tally.so/widgets/embed.js"></script>
   <!-- Vercel Web Analytics (static HTML mode) -->
