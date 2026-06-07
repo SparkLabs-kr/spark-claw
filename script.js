@@ -441,12 +441,20 @@
   // ---- Nav scroll state + mobile menu ------------------------------------
   function initNav() {
     const nav = document.querySelector('.nav');
+    const toTop = document.getElementById('toTop');
     const onScroll = () => {
       if (window.scrollY > 8) nav.classList.add('is-scrolled');
       else nav.classList.remove('is-scrolled');
+      if (toTop) toTop.classList.toggle('is-visible', window.scrollY > 400);
     };
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
+
+    if (toTop) {
+      toTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
 
     const menuBtn = document.querySelector('.nav__menu');
     if (menuBtn) {
