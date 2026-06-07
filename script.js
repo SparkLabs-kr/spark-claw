@@ -22,6 +22,7 @@
         apply: "지원하기", timeline: "일정",
         philosophy: "철학", benefits: "혜택", process: "프로세스", about: "스파크랩",
         news: "뉴스", insights: "인사이트", faq: "FAQ",
+        program: "프로그램", updates: "소식",
         cta: "지원하기"
       },
       hero: {
@@ -179,6 +180,7 @@
         apply: "Apply", timeline: "Timeline",
         philosophy: "Philosophy", benefits: "Benefits", process: "Process", about: "About",
         news: "News", insights: "Insights", faq: "FAQ",
+        program: "Program", updates: "News",
         cta: "Apply now"
       },
       hero: {

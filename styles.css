@@ -180,6 +180,8 @@ button {
   position: relative;
 }
 .nav__links a:hover { color: var(--accent); }
+/* "지원하기" CTA appears only inside the mobile menu */
+.nav__links .nav__cta { display: none; }
 
 .nav__actions {
   display: flex;
@@ -251,15 +253,29 @@ body.nav-open .nav__links {
   z-index: 60;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
   background: var(--bg);
-  padding: 48px 28px;
-  gap: 28px;
+  padding: 56px 28px;
+  gap: 36px;
   font-size: 22px;
   border-top: 1px solid var(--border);
   overflow-y: auto;
   overscroll-behavior: contain;
 }
 body.nav-open .nav__links a { font-size: 22px; }
+/* Apply CTA button at the top of the mobile menu */
+body.nav-open .nav__links .nav__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  padding: 15px 48px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+}
+body.nav-open .nav__links .nav__cta:hover { background: var(--accent-ink); color: #fff; }
 /* Hamburger morphs into an X when open */
 body.nav-open .nav__menu span:first-child { transform: translateY(4px) rotate(45deg); }
 body.nav-open .nav__menu span:last-child  { transform: translateY(-4px) rotate(-45deg); }
