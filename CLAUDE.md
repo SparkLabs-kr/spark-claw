@@ -201,7 +201,11 @@ When adding an image referenced by HTML, make sure the file is actually committe
 
 Most recent first (see `git log` for full history):
 
-1. `Redesign to SparkClaw brand guidelines` — full visual refresh of the landing page: brand palette
+1. `Swap application form for next-batch notify form` — Cohort 01 recruiting closed (2026-07).
+   `#apply` now embeds Tally notify forms (KO `zx0dx1`, EN `68rJNA`); hero eyebrow/CTA, nav CTA, and
+   footer link changed from 지원하기/Apply to 알림 신청/Get notified; timeline active step moved to
+   서류 심사. To reopen applications, revert this commit's copy + swap the Tally URLs back.
+2. `Redesign to SparkClaw brand guidelines` — full visual refresh of the landing page: brand palette
    (`#E5241B` red / `#1A1A1A` ink / white paper + 5 confetti accents), Poppins/Inter type, alternating
    warm sections, dark apply card + dark footer with confetti strip, scroll reveals, upgraded hover/
    focus states. Copy and program facts unchanged. (Note: the brand PDF's program figures — 300+

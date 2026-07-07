@@ -23,13 +23,13 @@
         philosophy: "철학", benefits: "혜택", process: "프로세스", about: "스파크랩",
         news: "뉴스", insights: "인사이트", faq: "FAQ",
         program: "프로그램", updates: "소식",
-        cta: "지원하기"
+        cta: "알림 신청"
       },
       hero: {
-        eyebrow: "스파크랩 · Cohort 01 모집 중",
+        eyebrow: "스파크랩 · 다음 배치 준비 중",
         title: { line1: "AI가", line2: "당신의 팀", line3: "입니다." },
         sub: "Spark Claw는 에이전틱 AI 시대의 1인 및 소규모 팀 창업가를 위한 스파크랩의 첫 프로그램입니다.",
-        ctaPrimary: "1기 지원하기",
+        ctaPrimary: "다음 배치 알림 신청",
         ctaSecondary: "프로그램 철학 읽기 →",
         stat1: { label: "초기 투자 규모", value: "5천만 원 ~ 2억 원 <span class=\"tips-note\">(TIPS 프로그램 연계)</span>" },
         stat2: { label: "지원 대상",     value: "1인 또는 소규모 팀의 AI 창업자" },
@@ -148,9 +148,9 @@
         ]
       },
       apply: {
-        label: "Cohort 01 · 지원서 접수 중",
-        title: { line1: "Cohort 01", line2: " 지원서 ", line3: "접수 중입니다." },
-        sub: "지원서 마감: 6월 28일 (일) 자정. 아래 양식을 작성하여 제출해주세요."
+        label: "Cohort 01 모집 마감",
+        title: { line1: "다음 배치 소식을 ", line2: "가장 먼저", line3: " 받아보세요." },
+        sub: "Cohort 01 모집이 마감되었습니다. 이메일을 남겨주시면 다음 배치 모집이 열릴 때 가장 먼저 알려드립니다."
       },
       timeline: {
         label: "Program Timeline",
@@ -166,7 +166,7 @@
       },
       footer: {
         tagline: "SparkClaw Powered by SparkLabs AI",
-        links: { sparklabs: "스파크랩", apply: "지원하기", contact: "문의하기" },
+        links: { sparklabs: "스파크랩", apply: "알림 신청", contact: "문의하기" },
         copy: "© 2026 SparkLabs. All rights reserved."
       }
     },
@@ -181,13 +181,13 @@
         philosophy: "Philosophy", benefits: "Benefits", process: "Process", about: "About",
         news: "News", insights: "Insights", faq: "FAQ",
         program: "Program", updates: "News",
-        cta: "Apply now"
+        cta: "Get notified"
       },
       hero: {
-        eyebrow: "SparkLabs · Cohort 01 · Now Open",
+        eyebrow: "SparkLabs · Next batch in the works",
         title: { line1: "AI is", line2: " your team", line3: "." },
         sub: "Spark Claw is SparkLabs' first program built for solo founders and small teams in the age of Agentic AI.",
-        ctaPrimary: "Apply for Cohort 01",
+        ctaPrimary: "Get notified first",
         ctaSecondary: "Read our thesis →",
         stat1: { label: "Initial investment", value: "KRW 50M – 200M <span class=\"tips-note\">(via TIPS program)</span>" },
         stat2: { label: "Who we back",        value: "Solo & small-team AI founders" },
@@ -306,9 +306,9 @@
         ]
       },
       apply: {
-        label: "Cohort 01 · Applications Open",
-        title: { line1: "Cohort 01", line2: " Applications ", line3: "Now Open." },
-        sub: "Deadline: June 28 (Sun) midnight KST. Fill out the form below to apply."
+        label: "Cohort 01 · Applications Closed",
+        title: { line1: "Be the ", line2: "first to know", line3: " about the next batch." },
+        sub: "Cohort 01 applications have closed. Leave your email and we'll let you know the moment the next batch opens."
       },
       timeline: {
         label: "Program Timeline",
@@ -324,7 +324,7 @@
       },
       footer: {
         tagline: "SparkClaw Powered by SparkLabs AI",
-        links: { sparklabs: "SparkLabs", apply: "Apply", contact: "Contact" },
+        links: { sparklabs: "SparkLabs", apply: "Get notified", contact: "Contact" },
         copy: "© 2026 SparkLabs. All rights reserved."
       }
     }
