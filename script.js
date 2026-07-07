@@ -645,7 +645,7 @@
   const insightsItems = [
     {
       url: "/sparkclaw-insight-korea-builders",
-      date: "2026-07-07",
+      date: "2026-06-27",
       author: { ko: "김호민 (Jimmy Kim)", en: "Jimmy Kim" },
       topic: { ko: "#VerticalAI", en: "#Vertical AI" },
       title: {
