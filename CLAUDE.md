@@ -123,24 +123,35 @@ The `#tally-form` iframe has `data-src-ko` / `data-src-en` pointing to separate 
 
 ### Design tokens (`:root` in `styles.css`)
 
+Palette and type follow the **SparkClaw Brand Guidelines v1.1** (2026): red leads, confetti
+supports — aim ~70% paper / 20% red & ink / 10% confetti accents.
+
 ```css
---bg:        #FAFAFB;   /* off-white page background */
---ink:       #0A0E27;   /* deep navy — body text */
---ink-soft:  #1F2745;
---muted:     #4A5161;
---border:    #E1E4E8;
---accent:    #E63946;   /* SparkClaw red — primary brand / CTAs */
---accent-ink:#B82B36;   /* darker red for hovers */
---accent-soft:#FCE5E7;
-/* spark accent palette: --spark-yellow #FFB800, --spark-green #16A34A,
-   --spark-pink #DB2777, --spark-blue #1D4ED8 */
---font-sans:    "Pretendard Variable", "Inter", system-ui, …;
---font-display: "Space Grotesk", "Pretendard Variable", …;
---radius: 14px;  --radius-sm: 8px;  --container: 1200px;
---ease: cubic-bezier(.2,.7,.2,1);
+--bg:        #FFFFFF;   /* Paper */
+--bg-alt:    #FAF9F7;   /* warm paper — alternating sections (timeline/benefits/insights) */
+--ink:       #1A1A1A;   /* Ink — body text, dark surfaces */
+--ink-soft:  #3D3D3B;
+--muted:     #6E6B66;
+--border:    #E9E6E1;
+--accent:        #E5241B;  /* SparkClaw Red — primary brand / CTAs */
+--accent-ink:    #C01A12;  /* hover / pressed */
+--accent-bright: #FF554C;  /* red on dark surfaces */
+--accent-soft:   #FCE9E8;
+/* confetti accents: --spark-orange #F5821F, --spark-yellow #FFC42E,
+   --spark-green #46B414, --spark-pink #EE1A6E, --spark-blue #0072BC */
+/* dark UI: --dark #1A1A1A, --dark-text #E1E1E0 (apply card, partner banner, footer) */
+--font-sans:    "Inter", "Pretendard Variable", system-ui, …;
+--font-display: "Poppins", "Pretendard Variable", …;   /* headings; Hangul falls back to Pretendard */
+--radius: 18px;  --radius-sm: 10px;  --container: 1200px;
+--ease: cubic-bezier(.22,.68,.26,1);  --spring: cubic-bezier(.34,1.4,.44,1);
 ```
 
-Use these variables — don't hardcode hex values.
+Use these variables — don't hardcode hex values. The insights pages (`insights.html`,
+`sparkclaw-insight-*.html`) keep their own warm gold editorial theme (inline styles) on purpose;
+only the fonts were aligned to Poppins/Inter.
+
+Scroll-reveal: `initReveal()` in `script.js` adds `.reveal`/`.reveal--stagger` via
+IntersectionObserver (no-JS and reduced-motion users see content immediately).
 
 ---
 
@@ -190,7 +201,12 @@ When adding an image referenced by HTML, make sure the file is actually committe
 
 Most recent first (see `git log` for full history):
 
-1. `Update inquiry email to batch@sparklabs.co.kr` — footer Contact + partner-inquiry CTA.
+1. `Redesign to SparkClaw brand guidelines` — full visual refresh of the landing page: brand palette
+   (`#E5241B` red / `#1A1A1A` ink / white paper + 5 confetti accents), Poppins/Inter type, alternating
+   warm sections, dark apply card + dark footer with confetti strip, scroll reveals, upgraded hover/
+   focus states. Copy and program facts unchanged. (Note: the brand PDF's program figures — 300+
+   founders, $100K SAFE, Aug 15 close — conflict with live Cohort 01 facts and were NOT adopted.)
+2. `Update inquiry email to batch@sparklabs.co.kr` — footer Contact + partner-inquiry CTA.
 2. `Simplify nav to 4 items + apply CTA` — nav reduced to 프로그램/일정/소식/FAQ + Apply; About moved to footer.
 3. `Fix mobile menu + add scroll-to-top button` — backdrop-filter overlay fix; hamburger→X; floating
    `#toTop` button (appears after 400px scroll, smooth-scrolls to top) for desktop + mobile.

@@ -719,6 +719,33 @@
     renderInsights(document.documentElement.lang || "ko");
   }
 
+  // ---- Reveal on scroll ----------------------------------------------------
+  // Adds .reveal via JS (not in markup) so content stays visible without JS.
+  function initReveal() {
+    if (!('IntersectionObserver' in window)) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const singles = document.querySelectorAll(
+      '.section__head, .philosophy__quote, .philosophy__body, .apply__card, ' +
+      '.about__grid, .faq__list, .benefits__more, .benefits__partner, .process__note'
+    );
+    const staggered = document.querySelectorAll(
+      '.benefits__grid, .process__steps, .news__grid, .insights__grid, .timeline__steps'
+    );
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -6% 0px', threshold: 0.02 });
+
+    singles.forEach(el => { el.classList.add('reveal'); io.observe(el); });
+    staggered.forEach(el => { el.classList.add('reveal', 'reveal--stagger'); io.observe(el); });
+  }
+
   // ---- Year stamp --------------------------------------------------------
   function stampYear() {
     const year = new Date().getFullYear();
@@ -734,5 +761,6 @@
     stampYear();
     initNews();
     initInsights();
+    initReveal();
   });
 })();
