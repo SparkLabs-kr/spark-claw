@@ -201,7 +201,12 @@ When adding an image referenced by HTML, make sure the file is actually committe
 
 Most recent first (see `git log` for full history):
 
-1. `Swap application form for next-batch notify form` — Cohort 01 recruiting closed (2026-07).
+1. `Add two Insight posts` (2026-07-07) — `sparkclaw-insight-korea-builders` and
+   `sparkclaw-insight-vibe-coding-security` (both by 김호민/Jimmy Kim, from Word manuscripts).
+   Body images live in `assets/Insights/<slug>/NN.jpg`; card covers are
+   `assets/Insights/<slug>.jpg` (1200×675). Listed in `insightsItems` (script.js) and hardcoded
+   cards in `insights.html` — a new post must be added in BOTH places.
+2. `Swap application form for next-batch notify form` — Cohort 01 recruiting closed (2026-07).
    `#apply` now embeds Tally notify forms (KO `zx0dx1`, EN `68rJNA`); hero eyebrow/CTA, nav CTA, and
    footer link changed from 지원하기/Apply to 알림 신청/Get notified; timeline active step moved to
    서류 심사. To reopen applications, revert this commit's copy + swap the Tally URLs back.

@@ -644,6 +644,28 @@
   // If `image` is omitted, falls back to a gradient cover with topic tag.
   const insightsItems = [
     {
+      url: "/sparkclaw-insight-korea-builders",
+      date: "2026-07-07",
+      author: { ko: "김호민 (Jimmy Kim)", en: "Jimmy Kim" },
+      topic: { ko: "#VerticalAI", en: "#Vertical AI" },
+      title: {
+        ko: "한국이 AI 시대에 늦은 게 아닙니다 — 우리는 늘 Builder였습니다",
+        en: "Korea isn't late to the AI era — we've always been builders"
+      },
+      image: "assets/Insights/korea-builders.jpg"
+    },
+    {
+      url: "/sparkclaw-insight-vibe-coding-security",
+      date: "2026-07-07",
+      author: { ko: "김호민 (Jimmy Kim)", en: "Jimmy Kim" },
+      topic: { ko: "#바이브코딩", en: "#Vibe Coding" },
+      title: {
+        ko: "AI가 대신 코드를 짜준다. 그런데 책임까지 져줄까?",
+        en: "AI writes your code. But will it take responsibility?"
+      },
+      image: "assets/Insights/vibe-coding-security.jpg"
+    },
+    {
       url: "/sparkclaw-insight-ai-agent-teammate",
       date: "2026-05-10",
       author: { ko: "김호민 (Jimmy Kim)", en: "Jimmy Kim" },
