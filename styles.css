@@ -1469,16 +1469,6 @@ html[lang="en"] .hero__title { letter-spacing: -0.035em; }
 }
 .insight-card:hover .insight-card__title { color: #8A6400; }
 
-.insight-card__cta {
-  margin-top: auto;
-  padding-top: 8px;
-  font-family: var(--font-display);
-  font-size: 13px;
-  color: #8A6400;
-  letter-spacing: 0.01em;
-  font-weight: 600;
-}
-
 /* ============ FAQ ============ */
 .faq__list {
   list-style: none;

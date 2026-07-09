@@ -124,7 +124,6 @@
         label: "06 — Insights",
         title: "Spark Claw Insight",
         sub: "AI 네이티브 창업자를 위한 조언.",
-        cta: "기고문 읽기 →",
         stamp: "Spark Claw Insights"
       },
       faq: {
@@ -282,7 +281,6 @@
         label: "06 — Insights",
         title: "Spark Claw Insight",
         sub: "Advice for AI-native founders.",
-        cta: "Read article →",
         stamp: "Spark Claw Insights"
       },
       faq: {
@@ -693,7 +691,6 @@
     const grid = document.getElementById("insightsGrid");
     if (!grid) return;
     const data = dict[lang] || dict.ko;
-    const ctaText = (data.insights && data.insights.cta) || "Read article →";
     const stampText = (data.insights && data.insights.stamp) || "Spark Claw Insights";
 
     const sorted = insightsItems.slice().sort((a, b) => {
@@ -730,7 +727,6 @@
                              <span class="insight-card__date">${escapeHtml(dateStr)}</span>` : ""}
               </div>
               <h3 class="insight-card__title">${escapeHtml(title)}</h3>
-              <span class="insight-card__cta">${escapeHtml(ctaText)}</span>
             </div>
           </a>
         </li>`;
