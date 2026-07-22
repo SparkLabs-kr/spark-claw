@@ -142,8 +142,8 @@
             a: "한국 시장 진출 또는 한국 기반 창업 계획이 있다면 지원 가능합니다. 세부 자격 요건은 1기 모집 공고를 통해 공개됩니다." },
           { q: "1기 모집 일정은 어떻게 되나요?",
             a: "지원서 접수는 6월 8일부터 6월 28일까지이며, 서류 심사·인터뷰를 거쳐 8월 초 부트캠프, 10월 말부터 본 프로그램이 진행됩니다.<br>상세 일정은 홈페이지 ‘일정’ 섹션에서 확인하실 수 있습니다." },
-          { q: "Spark Claw의 OpenAI / Anthropic / Gemini / MS Azure 크레딧은 언제 제공되나요?",
-            a: "심사 과정을 통과하여 부트캠프에 참여하는 팀들부터 제공됩니다." }
+          { q: "Spark Claw에서 제공되는 AI 크레딧은 언제 제공되나요?",
+            a: "심사 과정을 통과하여 부트캠프에 참여하는 팀들에게 단계별로 나누어 제공됩니다." }
         ]
       },
       apply: {
@@ -299,8 +299,8 @@
             a: "Yes — if your roadmap includes targeting or expanding into the Korean market." },
           { q: "What is the Cohort 01 schedule?",
             a: "Applications are open from June 8 to June 28. After screening and interviews, the bootcamp runs from early August to early October, followed by the main program from late October to mid-December.<br>See the ‘Timeline’ section on this page for full details." },
-          { q: "When are Spark Claw's OpenAI / Anthropic / Gemini / MS Azure credits provided?",
-            a: "Credits are provided to teams that pass the screening and join the bootcamp." }
+          { q: "When are the AI credits provided by Spark Claw distributed?",
+            a: "AI credits are distributed in stages to teams that pass the screening and join the bootcamp." }
         ]
       },
       apply: {
