@@ -60,13 +60,13 @@
         label: "02 — What You Get",
         title: "SparkClaw AI-Native Builder Stack",
         tagline: "창업 초기, 가장 필요한 것부터.",
-        sub: "스파크랩 포트폴리오사에게 제공되는 동일한 혜택과 더불어, AI 기업에 특화된 현금 가치 <strong class=\"accent\">5억원 상당</strong>의 혜택을 제공합니다.",
+        sub: "Spark Claw 참여 기업의 성장을 지원하기 위해 파트너사와 함께 AI 기업 맞춤형 크레딧 혜택을 제공합니다.",
         items: [
           { title: "초기 투자",             value: "5천만 원 ~ 2억 원 <span class=\"tips-note\">(TIPS 프로그램 연계)</span>",  desc: "집중 부트캠프를 통과한 창업가 대상 초기 투자." },
-          { title: "OpenAI API 크레딧",     value: "AI 인프라",     desc: "GPT 모델과 에이전트 툴 구축을 위한 크레딧." },
-          { title: "Anthropic Claude 크레딧", value: "AI 인프라",   desc: "Tier 4 등급 Claude 기반 에이전틱 워크플로우 구축 지원" },
-          { title: "GCP (Gemini)",          value: "AI 인프라",     desc: "Gemini API 가용 크레딧 지원" },
-          { title: "Microsoft Azure",       value: "AI 인프라",     desc: "Azure 크레딧 지원, Azure 엔지니어와의 1:1 세션 지원" },
+          { title: "AWS 크레딧",            value: "AI 인프라",     desc: "" },
+          { title: "Anthropic Claude 크레딧", value: "AI 인프라",   desc: "" },
+          { title: "GCP (Gemini)",          value: "AI 인프라",     desc: "" },
+          { title: "Github 크레딧",         value: "AI 인프라",     desc: "" },
           { title: "AI 창업자 커뮤니티",     value: "네트워크",      desc: "커뮤니티형 세션 및 오프라인 밋업 개최" }
         ],
         more: {
@@ -217,13 +217,13 @@
         label: "02 — What you get",
         title: "SparkClaw AI-Native Builder Stack",
         tagline: "The essentials — from day one.",
-        sub: "Every benefit our portfolio companies receive — plus an AI-native stack worth <strong class=\"accent\">approximately ₩500M</strong> in cash value.",
+        sub: "Supporting the growth of Spark Claw companies — we offer tailored AI infrastructure credits in partnership with global leaders.",
         items: [
           { title: "Seed investment",           value: "KRW 50M – 200M <span class=\"tips-note\">(via TIPS program)</span>",   desc: "Initial check for founders who complete the intensive bootcamp." },
-          { title: "OpenAI API credits",        value: "AI infrastructure", desc: "Credits to build on GPT models and agent tooling." },
-          { title: "Anthropic Claude credits",  value: "AI infrastructure", desc: "Tier 4 access to Claude for building agentic workflows." },
-          { title: "GCP (Gemini)",              value: "AI infrastructure", desc: "Gemini API credits." },
-          { title: "Microsoft Azure",           value: "AI infrastructure", desc: "Azure credits plus 1:1 sessions with Azure engineers." },
+          { title: "AWS credits",               value: "AI infrastructure", desc: "" },
+          { title: "Anthropic Claude credits",  value: "AI infrastructure", desc: "" },
+          { title: "GCP (Gemini)",              value: "AI infrastructure", desc: "" },
+          { title: "GitHub credits",            value: "AI infrastructure", desc: "" },
           { title: "AI founders community",     value: "Network",           desc: "Community-format sessions and offline meetups." }
         ],
         more: {

@@ -850,7 +850,7 @@ html[lang="en"] .hero__title { letter-spacing: -0.035em; }
   display: flex;
   flex-direction: column;
   gap: 12px;
-  min-height: 250px;
+  min-height: 280px;
   box-shadow: var(--shadow-1);
   transition: transform .3s var(--spring), box-shadow .3s var(--ease), border-color .3s var(--ease);
 }
@@ -915,7 +915,7 @@ html[lang="en"] .hero__title { letter-spacing: -0.035em; }
 }
 @media (max-width: 560px) {
   .benefits__grid { grid-template-columns: 1fr; gap: 14px; }
-  .benefit-card { min-height: 0; padding: 28px 24px 26px; }
+  .benefit-card { min-height: auto; padding: 28px 24px 26px; }
 }
 
 /* "More partners joining" callout */
